@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="pending" type="id">Pending</item>
+    <item name="request_open" type="id">open</item>
+    <item name="request_progress" type="id">in progress</item>
+    <item name="request_closed" type="id">complete</item>
+    <item name="request_cancelled" type="id">cancelled</item>
+    <item name="request_rejected" type="id">rejected</item>
+</resources>

@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/pop_parent"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:layout_marginLeft="50dp"
+    android:layout_marginRight="50dp"
+    android:orientation="vertical"
+
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:weightSum="5"
+        >
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_marginTop="5dp"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:text="@string/app_name"
+                android:textColor="@color/blue"
+                android:textSize="@dimen/sixteen_text_size"
+                android:textStyle="bold" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="3"
+            android:layout_marginTop="25dp"
+            android:layout_marginBottom="25dp"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/alert_message"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="@color/black"
+                android:gravity="center"
+                android:textSize="@dimen/sixteen_text_size"
+                />
+
+
+        </LinearLayout>
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="2dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:background="@color/black_alpha_40"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:gravity="center"
+            android:layout_weight="1"
+            >
+
+            <TextView
+                android:id="@+id/ok_alert"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal"
+                android:text="@string/ok"
+                android:layout_gravity="center"
+                android:textStyle="bold"
+                android:textAllCaps="false"
+                android:textColor="@color/blue"
+                android:textSize="@dimen/sixteen_text_size"/>
+
+        </LinearLayout>
+
+
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="@dimen/deca_margin"
+        >
+
+        <ImageView
+            android:layout_width="@dimen/thirty_space"
+            android:layout_height="@dimen/thirty_space"
+            android:src="@drawable/ic_wk_logo_popup"
+            android:visibility="gone"
+            android:scaleType="fitCenter"
+            android:paddingRight="@dimen/small_space_eight"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:paddingRight="@dimen/small_space_eight"
+            android:text="@string/wolterskluwer"
+            android:textColor="@color/colorGreen"
+            android:textSize="@dimen/eighteen_text_size"
+            android:visibility="gone"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+
+
+
+</LinearLayout>
+

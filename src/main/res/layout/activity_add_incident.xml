@@ -1,0 +1,514 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/parent_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/toolbar_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/create_incident_toolbar"
+                android:textColor="@android:color/white"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+        </android.support.v7.widget.Toolbar>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:id="@+id/toplist_txt"
+        android:layout_gravity="center"
+        android:padding="10dp"
+        android:textStyle="bold"
+        android:textSize="@dimen/twelve_text_size"
+        android:textAlignment="center"
+        android:background="#029982"
+        android:textColor="@android:color/white"
+        android:text="@string/toplist_text_new"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        android:isScrollContainer="true"
+        android:scrollbars="none"
+        android:overScrollMode="never"
+        android:layout_marginLeft="@dimen/fifteen_margin"
+        android:layout_marginRight="@dimen/fifteen_margin">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:weightSum="5"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            android:padding="2dp"
+            android:id="@+id/incident_scrollup"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:weightSum="3"
+                android:gravity="center"
+                >
+
+                <LinearLayout
+                    android:id="@+id/slotNo"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight=".5"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/statusIcon"
+                        android:layout_width="@dimen/fifty_five_space"
+                        android:layout_height="@dimen/fifty_five_space"
+                        android:gravity="center"
+                        app:srcCompat="@drawable/ic_incident_new_blue" />
+
+                    <TextView
+                        android:id="@+id/status"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/failed"
+                        android:visibility="gone"
+                        android:gravity="center"
+                        android:textSize="@dimen/ten_text_size" />
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2.5"
+                    android:padding="3dp"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:weightSum="3"
+                        android:gravity="center"
+                        android:layout_marginTop="10dp"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1">
+
+                            <TextView
+                                android:id="@+id/incidentNumber"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/incidentName"
+                                android:padding="2dp"
+                                android:typeface="sans"
+                                android:textStyle="bold"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/sixteen_text_size" />
+
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="2"
+                            android:orientation="horizontal"
+                            android:weightSum="3"
+                            android:gravity="center|top">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:gravity="center|left"
+                                android:layout_weight="2.5">
+
+                                <EditText
+                                    android:id="@+id/incident_short_description1"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:typeface="sans"
+                                    android:padding="3dp"
+                                    android:enabled="false"
+                                    android:backgroundTint="@android:color/transparent"
+                                    android:text="@string/incidentStatus"
+                                    android:textColor="@color/incidentTitle"
+                                    android:textSize="@dimen/sixteen_text_size"/>
+
+                            </LinearLayout>
+
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight=".5"
+                                android:gravity="top|center">
+
+                                <ImageView
+                                    android:layout_width="20dp"
+                                    android:layout_height="20dp"
+                                    app:srcCompat="@drawable/ic_down_arrow"/>
+
+                            </LinearLayout>
+                        </LinearLayout>
+                        <TextView
+                            android:id="@+id/incidentDate"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="right"
+                            android:text="29-08-2016"
+                            android:typeface="sans"
+                            android:visibility="gone"
+                            android:layout_marginRight="5dp"
+                            android:textColor="@color/incidentnumber"
+                            android:textSize="@dimen/fifteen_text_size" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:background="@color/darkGrey"></View>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:layout_weight="3.3">
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="10dp"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:id="@+id/rl_urgency"
+                        android:padding="2dp"
+                        >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="@string/urgency"
+                            android:gravity="center"
+                            android:textColor="@color/blue"
+                            android:layout_marginBottom="@dimen/small_space_three"
+                            android:textAllCaps="true"
+                            android:textStyle="bold"
+                            android:textSize="@dimen/eighteen_text_size"/>
+
+
+                        <Spinner
+                            android:id="@+id/priority"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:typeface="sans"
+                            android:imeOptions="actionDone"
+                            android:layout_weight="1"
+                            android:lines="1"
+                            android:visibility="gone"
+                            style="@style/Widget.AppCompat.Spinner.Underlined" />
+
+                        <ImageView
+                            android:id="@+id/incident_info"
+                            android:layout_width="wrap_content"
+                            android:layout_height="20dp"
+                            android:layout_alignParentRight="true"
+                            app:srcCompat="@drawable/ic_info_icon"/>
+
+
+                    </RelativeLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="15dp"
+                        android:paddingTop="15dp"
+                        android:gravity="center_horizontal"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <CheckBox
+                                android:id="@+id/critical"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:button="@drawable/custom_groupbox_bg"
+                                android:textSize="@dimen/twelve_text_size"
+                                android:maxLines="1"
+                                android:paddingRight="10dp"
+                                android:textAlignment="inherit"
+                                android:text="@string/critical"
+                                />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <CheckBox
+                                android:id="@+id/high"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:button="@drawable/custom_groupbox_bg"
+                                android:textSize="@dimen/twelve_text_size"
+                                android:maxLines="1"
+                                android:paddingRight="10dp"
+                                android:textAlignment="inherit"
+                                android:text="@string/high" />
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <CheckBox
+                                android:id="@+id/medium"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:button="@drawable/custom_groupbox_bg"
+                                android:textSize="@dimen/twelve_text_size"
+                                android:maxLines="1"
+                                android:paddingRight="10dp"
+                                android:textAlignment="inherit"
+                                android:text="@string/medium" />
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <CheckBox
+                                android:id="@+id/low"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:button="@drawable/custom_groupbox_bg"
+                                android:textSize="@dimen/twelve_text_size"
+                                android:checked="true"
+                                android:paddingRight="10dp"
+                                android:textAlignment="inherit"
+                                android:maxLines="1"
+                                android:text="@string/low" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+
+                    <TextView
+                        android:id="@+id/txt_priority_status"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:typeface="sans"
+                        android:textColor="@color/red"
+                        android:visibility="gone"
+                        android:paddingLeft="@dimen/fifteen_margin"
+                        android:layout_marginBottom="@dimen/deca_margin" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginBottom="8dp"
+                        android:orientation="vertical">
+
+                        <EditText
+                            android:id="@+id/incident_short_description"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginBottom="@dimen/fifteen_margin"
+                            android:background="@drawable/rounded_edittext"
+                            android:hint="@string/shortDescription"
+                            android:layout_gravity="center"
+                            android:textColorHint="@color/darkGrey"
+                            android:typeface="sans"
+                            android:gravity="top"
+                            android:textSize="@dimen/sixteen_text_size"
+                            android:textStyle="italic"
+                            android:paddingTop="10dp"
+                            android:lines="4"
+                            android:paddingLeft="@dimen/fifteen_margin" />
+
+                        <EditText
+                            android:id="@+id/incident_detailed_description"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:inputType="text|textMultiLine"
+                            android:typeface="sans"
+                            android:textStyle="italic"
+                            android:textSize="@dimen/sixteen_text_size"
+                            android:gravity="top"
+                            android:paddingTop="10dp"
+                            android:textColorHint="@color/darkGrey"
+                            android:lines="8"
+                            android:background="@drawable/rounded_edittext"
+                            android:hint="@string/detailedDescription"
+                            android:paddingLeft="@dimen/fifteen_margin" />
+
+
+                    </LinearLayout>
+
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="25dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="@string/mylocaton"
+                            android:gravity="center"
+                            android:layout_marginLeft="3dp"
+                            android:textColor="@color/blue"
+                            android:layout_marginBottom="@dimen/small_space_three"
+                            android:layout_marginTop="5dp"
+                            android:textStyle="bold"
+                            android:textSize="@dimen/eighteen_text_size"/>
+
+                        <AutoCompleteTextView
+                            android:id="@+id/location"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:imeOptions="actionNext"
+                            android:inputType="text"
+                            android:lines="1"
+                            android:maxLines="1"
+                            android:hint="@string/location"
+                            android:typeface="sans"
+                            android:ems="10"
+                            android:text=""
+                            android:paddingLeft="@dimen/fifteen_margin"
+                            android:drawableRight="@drawable/ic_location_icon"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="@string/myNumber"
+                            android:gravity="center"
+                            android:textColor="@color/blue"
+                            android:layout_marginBottom="@dimen/small_space_three"
+                            android:layout_marginLeft="3dp"
+                            android:textStyle="bold"
+                            android:textSize="@dimen/eighteen_text_size"/>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:id="@+id/code_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignBaseline="@+id/preffered_contact_number"
+                            android:layout_alignBottom="@+id/preffered_contact_number"
+                            android:layout_alignParentLeft="true"
+                            android:text="@string/number_code"
+                            android:textStyle="bold"
+                            android:layout_marginLeft="4dp"
+                            android:textColor="@android:color/black"
+                            android:textSize="@dimen/sixteen_text_size"
+                            />
+                        <EditText
+                            android:id="@+id/preffered_contact_number"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:typeface="sans"
+                            android:layout_alignParentRight="true"
+                            android:imeOptions="actionDone"
+                            android:inputType="phone"
+                            android:lines="1"
+                            android:layout_marginLeft="8dp"
+                            android:textSize="@dimen/fifteen_text_size"
+                            android:maxLength="14"
+                            android:hint="@string/contactNumber"
+                            android:paddingLeft="@dimen/fifteen_margin" />
+                    </RelativeLayout>
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+
+
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight=".7"
+            android:gravity="center"
+            android:layout_marginBottom="8dp">
+            <Button
+                android:id="@+id/buttonIncidentSubmit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="@dimen/fifteen_margin"
+                android:layout_marginRight="@dimen/fifteen_margin"
+                android:background="@drawable/round_corner"
+                android:text="@string/action_submit"
+                android:textAllCaps="false"
+                android:textColor="@android:color/white"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+    </LinearLayout>
+    </ScrollView>
+</LinearLayout>

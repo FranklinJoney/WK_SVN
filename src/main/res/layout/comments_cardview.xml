@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/fifteen_margin"
+        android:layout_marginTop="@dimen/deca_margin"
+        android:layout_marginLeft="@dimen/deca_margin"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/ic_profile_grey"
+                android:layout_gravity="center_vertical"/>
+
+            <TextView
+                android:id="@+id/commented_user"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/inidentnumber"
+                android:textColor="@color/incidentnumber"
+                android:textSize="@dimen/fifteen_text_size"
+                android:typeface="sans"
+                android:maxLength="15"
+                android:layout_marginLeft="@dimen/small_space_five"
+                android:gravity="center_vertical"/>
+
+
+            <TextView
+                android:id="@+id/commented_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:text="29-08-2016"
+                android:textColor="@color/incidentnumber"
+                android:textSize="@dimen/fifteen_text_size"
+                android:typeface="sans" />
+
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/comment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/incidentStatus"
+            android:textColor="@color/incidentTitle"
+            android:layout_marginTop="@dimen/small_space_eight"
+            android:layout_marginLeft="@dimen/twenty_two_margin"
+            android:textSize="@dimen/thirteen_text_size"
+            android:textStyle="bold"
+            android:typeface="sans" />
+
+
+</LinearLayout>

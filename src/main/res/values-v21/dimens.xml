@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="new_image_size">250dp</dimen>
+    <dimen name="twenty_eight_text_size">25sp</dimen>
+    <dimen name="thirty_text_size">30sp</dimen>
+</resources>

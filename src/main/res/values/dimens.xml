@@ -1,0 +1,67 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="nav_header_vertical_spacing">16dp</dimen>
+    <dimen name="nav_header_height">200dp</dimen>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+
+    <dimen name="zero_size">0dp</dimen>
+    <dimen name="image_height">220dp</dimen>
+    <dimen name="login_logo_height">350dp</dimen>
+    <dimen name="spacing_226">226dp</dimen>
+    <dimen name="spacing_350">350dp</dimen>
+    <dimen name="spacing_120">120dp</dimen>
+    <dimen name="spacing_150">150dp</dimen>
+    <dimen name="spacing_190">190dp</dimen>
+    <dimen name="twenty_space">20dp</dimen>
+    <dimen name="twenty_two_margin">22dp</dimen>
+    <dimen name="twenty_five_space">25dp</dimen>
+    <dimen name="sixty_height">60dp</dimen>
+    <dimen name="sixty_five_height">65dp</dimen>
+    <dimen name="eighty_height">80dp</dimen>
+    <dimen name="forty_height">40dp</dimen>
+    <dimen name="small_space_five">5dp</dimen>
+    <dimen name="small_space_eight">8dp</dimen>
+    <dimen name="small_space_seven">7dp</dimen>
+    <dimen name="unit_margin">1dp</dimen>
+    <dimen name="deca_margin">10dp</dimen>
+    <dimen name="fifteen_margin">15dp</dimen>
+
+    <dimen name="large_spacing">180dp</dimen>
+    <dimen name="half_margin">50dp</dimen>
+    <dimen name="small_space_three">3dp</dimen>
+    <dimen name="thirteen_margin">13dp</dimen>
+    <dimen name="fourteen_margin">14dp</dimen>
+    <dimen name="fifty_five_space">55dp</dimen>
+    <dimen name="thirty_space">30dp</dimen>
+    <dimen name="thirty_five_space">35dp</dimen>
+
+    <dimen name="fifty_space">50dp</dimen>
+    <dimen name="fourty_five_space">45dp</dimen>
+    <dimen name="seventy_space">70dp</dimen>
+    <dimen name="ninety_five_space">95dp</dimen>
+    <dimen name="hundred_space">100dp</dimen>
+    <dimen name="spacing_282">282dp</dimen>
+    <dimen name="spacing_330">330dp</dimen>
+    <dimen name="spacing_340">340dp</dimen>
+
+
+    <!--Text size-->
+    <dimen name="twenty_five_text_size">25sp</dimen>
+    <dimen name="twenty_text_size">20sp</dimen>
+    <dimen name="twenty_two_size">22sp</dimen>
+    <dimen name="eighteen_text_size">18sp</dimen>
+    <dimen name="fifteen_text_size">15sp</dimen>
+    <dimen name="twenty_three_text_size">23sp</dimen>
+    <dimen name="ten_text_size">10sp</dimen>
+    <dimen name="eight_text_size">8sp</dimen>
+    <dimen name="twelve_text_size">12sp</dimen>
+    <dimen name="sixteen_text_size">16sp</dimen>
+    <dimen name="thirteen_text_size">13sp</dimen>
+    <dimen name="twenty_two_text_size">22sp</dimen>
+    <dimen name="new_image_size">250dp</dimen>
+    <dimen name="twenty_eight_text_size">25sp</dimen>
+    <dimen name="thirty_text_size">30sp</dimen>
+</resources>

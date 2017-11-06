@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/microsoftLoginLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:orientation="vertical"
+    android:weightSum="5">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar_login"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            android:gravity="center"
+            app:popupTheme="@style/AppTheme.PopupOverlay">
+
+            <TextView
+                android:id="@+id/toolbar_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/app_name"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/twenty_text_size"
+                android:textStyle="bold" />
+
+        </android.support.v7.widget.Toolbar>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:weightSum="5">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="3.1"
+            android:orientation="vertical">
+
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/twenty_space"
+                android:layout_marginLeft="@dimen/twenty_five_space"
+                android:layout_marginRight="@dimen/twenty_five_space"
+                android:text="@string/banner_text"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sixteen_text_size"
+                android:textAlignment="center"
+                android:textStyle="italic" />
+
+
+            <ImageView
+                android:id="@+id/imageViewLogo"
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:layout_marginTop="@dimen/twenty_space"
+                android:scaleType="fitXY"
+                app:srcCompat="@drawable/ic_login_banner_new" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_main_layout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1.9"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textViewForgotPassword"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:paddingTop="@dimen/deca_margin"
+                android:textSize="@dimen/sixteen_text_size"
+                android:text="@string/sign_in" />
+
+            <Button
+                android:id="@+id/login_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/fifteen_margin"
+                android:layout_marginRight="@dimen/fifteen_margin"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/round_corner"
+                android:text="@string/signIn"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/twenty_text_size" />
+
+            <TextView
+                android:id="@+id/tv_cant_access"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="4dp"
+                android:textSize="@dimen/sixteen_text_size"
+                android:text="@string/cant_access" />
+
+            <Button
+                android:id="@+id/btn_reset_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/fifteen_margin"
+                android:layout_marginRight="@dimen/fifteen_margin"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/round_corner"
+                android:text="@string/resetPassword"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/twenty_text_size" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+
+
+</LinearLayout>
+

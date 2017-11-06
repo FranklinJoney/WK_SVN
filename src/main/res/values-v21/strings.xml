@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="assignment_history">Assignment History</string>
+    <string name="created_by">Created By:</string>
+    <string name="detailedDescriptiontext">Hi Kent, jgjbsafdbjsadbcjc vs dfajgbfjsan c afkbjns vmadfkjbasnd vcmw ad wefkbsjmv awg a fhawkejfb</string>
+    <string name="create_incidents">Create Incidents</string>
+    <string name="toplist_text">Top Incidents</string>
+    <string name="not_list_text">Not in this list?</string>
+    <string name="create_incidents_text">Create a New Incident</string>
+    <string name="myrequests">My Request</string>
+    <string name="myincidents">My Incidents</string>
+    <string name="btn_text_submit">SUBMIT</string>
+    <string name="touchid_subtext">Please use your fingerprint to unlock the application</string>
+    <string name="change_pwd_text">Change your existing password</string>
+    <string name="reset_pwd_text">Reset your expired password</string>
+    <string name="incident_details_URL">incident_details</string>
+    <string name="create_incident_URL">incident_create</string>
+    <string name="select_priority_check">Select any Priority</string>
+    <string name="request_summary_URL">request_summary</string>
+    <string name="noGlobalMessages">No Global Messages</string>
+    <string name="get_userphone_URL">userphone_get</string>
+    <string name="toplist_text_new">New</string>
+    <string name="create_request_URL">imp_create_request</string>
+    <string name="request_details_URL">request_details</string>
+    <string name="number_code">+1</string>
+    <string name="login_identify_wot_URL">submit_request_withouttoken</string>
+    <string name="verify_answers_wot_URL">check_answers_withouttoken</string>
+    <string name="reset_password_wot_URL">reset_password_withouttoken</string>
+</resources>

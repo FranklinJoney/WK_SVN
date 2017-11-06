@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/linearLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white">
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar_touch_id"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorPrimary"
+            android:gravity="center"
+            app:popupTheme="@style/AppTheme.PopupOverlay">
+            <TextView
+                android:id="@+id/toolbar_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/app_name"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/twenty_text_size"
+                android:textStyle="bold" />
+        </android.support.v7.widget.Toolbar>
+    </android.support.design.widget.AppBarLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <ImageView
+            android:id="@+id/imageViewLogo"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/new_image_size"
+            android:layout_gravity="center"
+            android:scaleType="fitXY"
+            app:srcCompat="@drawable/ic_banner_1" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:weightSum="7">
+
+            <TextView
+                android:id="@+id/textViewLoginTouchId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/thirty_space"
+                android:layout_weight="0.5"
+                android:text="@string/login_touch_id"
+                android:textColor="@color/enter_passcode_text"
+                android:textSize="@dimen/twenty_five_text_size" />
+
+            <ImageView
+                android:id="@+id/imageViewThumb"
+                android:layout_width="@dimen/hundred_space"
+                android:layout_height="@dimen/hundred_space"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/thirty_space"
+                android:layout_weight="2.5"
+                app:srcCompat="@drawable/ic_fingerprint_sensor_black" />
+
+
+            <TextView
+                android:id="@+id/textViewFingerPrintMsg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="25dp"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_marginRight="@dimen/activity_horizontal_margin"
+                android:layout_marginTop="25dp"
+                android:layout_weight="3"
+                android:textColor="@color/black"
+                android:text="@string/fingerprint_supported"
+                android:textAlignment="center"
+                android:textSize="@dimen/eighteen_text_size" />
+
+            <TextView
+                android:id="@+id/textViewLoginLink"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/fifteen_margin"
+                android:layout_weight="1"
+                android:gravity="center|bottom"
+                android:text="@string/login_link"
+                android:textAlignment="center"
+                android:textColor="@color/loginlink_blue"
+                android:textSize="@dimen/eighteen_text_size" />
+        </LinearLayout>
+
+    </LinearLayout>
+</RelativeLayout>

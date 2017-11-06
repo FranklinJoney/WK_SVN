@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_request_detail"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.ust.servicedesk.RequestDetailActivity"
+    android:orientation="vertical">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            android:gravity="center"
+            app:popupTheme="@style/AppTheme.PopupOverlay">
+
+            <TextView
+                android:id="@+id/toolbar_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/requestDetails"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/twenty_text_size"
+                android:textStyle="bold" />
+
+        </android.support.v7.widget.Toolbar>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/requestDetailCard"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/noRequestDetails"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical|center_horizontal"
+            android:textStyle="bold"
+            android:visibility="gone"
+            android:textSize="@dimen/twenty_space"
+            android:text="@string/noDetails"/>
+
+    </android.support.v7.widget.CardView>
+
+    <ScrollView
+        android:id="@+id/requestDetailScroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:scrollbars="vertical"
+        android:visibility="gone">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:weightSum="8"
+            android:layout_marginRight="@dimen/twenty_space">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:baselineAligned="false"
+                android:orientation="horizontal"
+                android:weightSum="8">
+
+                <LinearLayout
+                    android:id="@+id/slotNo"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="6.2"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/statusIcon"
+                        android:layout_width="@dimen/fifty_space"
+                        android:layout_height="@dimen/fifty_space"
+                        android:gravity="center"
+                        android:layout_marginTop="@dimen/fifteen_margin"
+                        android:layout_marginLeft="@dimen/deca_margin"
+                        android:layout_marginRight="@dimen/fifteen_margin"
+                        android:layout_marginBottom="@dimen/small_space_three"
+                        android:src="@drawable/ic_request_inprogress_purple" />
+
+                    <TextView
+                        android:id="@+id/status"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/small_space_three"
+                        android:gravity="center"
+                        android:text="@string/failed"
+                        android:textSize="@dimen/ten_text_size" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.8"
+                    android:orientation="vertical"
+                    android:layout_marginTop="@dimen/fifteen_margin">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/requestNumber"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/inidentnumber"
+                            android:typeface="sans"
+                            android:textColor="@color/incidentnumber"
+                            android:textSize="@dimen/fifteen_text_size"  />
+
+                        <TextView
+                            android:id="@+id/requestDate"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="right"
+                            android:text="29-08-2016"
+                            android:typeface="sans"
+                            android:textColor="@color/incidentnumber"
+                            android:textSize="@dimen/fifteen_text_size" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/requestStatus"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/incidentStatus"
+                        android:textColor="@color/incidentTitle"
+                        android:textSize="@dimen/sixteen_text_size"
+                        android:typeface="sans" />
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!--<ScrollView-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:fillViewport="true"-->
+            <!--android:scrollbars="horizontal"-->
+            <!--android:layout_marginRight="@dimen/fifteen_margin"-->
+            <!--android:layout_marginTop="@dimen/deca_margin"-->
+            <!--android:weightSum="3">-->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:baselineAligned="false"
+                    android:divider="@color/messages"
+                    android:orientation="vertical"
+                    android:paddingLeft="@dimen/twenty_space"
+                    android:layout_marginTop="@dimen/fifteen_margin"
+                    android:weightSum="10">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/description"
+                        android:layout_marginBottom="@dimen/small_space_three"/>
+
+                    <TextView
+                        android:id="@+id/txt_detailed_description"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/deca_margin"
+                        android:text="@string/sampleDescription"
+                        android:textSize="@dimen/sixteen_text_size"/>
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/created_time"
+                        android:layout_marginBottom="@dimen/small_space_three" />
+
+                    <TextView
+                        android:id="@+id/txt_contactingCustomer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/sixteen_text_size"
+                        android:layout_marginBottom="@dimen/deca_margin"
+                        android:text="@string/sampleContactingCustomer"
+                        android:layout_weight=".5"/>
+
+                    <TextView
+                        android:id="@+id/txt_resolvedTime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/resolved_time"
+                        android:layout_marginBottom="@dimen/small_space_three"/>
+
+                    <TextView
+                        android:id="@+id/txt_callbackNumber"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/deca_margin"
+                        android:text="@string/sampleCallbackNumber"
+                        android:textSize="@dimen/sixteen_text_size"
+                        android:layout_weight=".5"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/small_space_three"
+                        android:hint="@string/assigned_to" />
+
+                    <TextView
+                        android:id="@+id/txt_assigned_to"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/deca_margin"
+                        android:textSize="@dimen/sixteen_text_size"
+                        android:text="@string/sampleAffectedUser"
+                        android:layout_weight=".5"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/assignment_group"
+                        android:visibility="gone"
+                        android:layout_marginBottom="@dimen/small_space_three" />
+
+                    <TextView
+                        android:id="@+id/txt_assignment_group"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/deca_margin"
+                        android:text="@string/sampleAffectedUser"
+                        android:textSize="@dimen/sixteen_text_size"
+                        android:layout_weight=".5"
+                        android:visibility="gone"/>
+
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/divider" />
+
+                </LinearLayout>
+
+
+
+                <LinearLayout
+                    android:id="@+id/ll_request_comments"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginLeft="@dimen/twenty_space"
+                    android:layout_marginTop="@dimen/deca_margin"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/request_comments"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Comments"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/sixteen_text_size" />
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/my_recycler_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/small_space_eight"
+                        android:layout_marginBottom="@dimen/fifteen_margin">
+
+                    </android.support.v7.widget.RecyclerView>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+
+    </ScrollView>
+
+
+</LinearLayout>
+

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/relativeLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/imageViewLogo"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/new_image_size"
+            android:scaleType="fitXY"
+            app:srcCompat="@drawable/ic_banner_1" />
+
+        <TextView
+            android:id="@+id/textViewSecurity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/fourty_five_space"
+            android:text="@string/security"
+            android:textColor="@color/security_mode"
+            android:textSize="@dimen/twenty_five_text_size"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textViewSecurityMode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/deca_margin"
+            android:text="@string/security_mode"
+            android:textColor="@color/choose_security_mode"
+            android:textSize="@dimen/twenty_text_size" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:orientation="vertical"
+          android:padding="10dp"
+          android:gravity="bottom|center_vertical">
+            <Button
+                android:id="@+id/buttonPasscode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/deca_margin"
+                android:background="@drawable/round_corner"
+                android:text="@string/passcode"
+                android:textAllCaps="false"
+
+                android:clickable="true"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/twenty_text_size" />
+
+            <Button
+                android:id="@+id/buttonTouchID"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/fifteen_margin"
+                android:background="@drawable/round_corner"
+                android:text="@string/touch_id"
+                android:textAllCaps="false"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/twenty_text_size" />
+          </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+</RelativeLayout>

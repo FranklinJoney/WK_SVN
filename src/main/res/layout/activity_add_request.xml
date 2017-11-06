@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="5"
+    android:fitsSystemWindows="true">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/toolbar_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/create_request_toolbar"
+                android:textColor="@android:color/white"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+        </android.support.v7.widget.Toolbar>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/fifteen_margin"
+        android:layout_marginRight="@dimen/fifteen_margin"
+        android:layout_marginTop="@dimen/fifteen_margin"
+        android:layout_weight="1"
+        android:fitsSystemWindows="true"
+        android:isScrollContainer="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_weight="14">
+
+                <Spinner
+                    android:id="@+id/priority"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:typeface="sans"
+                    android:imeOptions="actionDone"
+                    android:layout_weight="1"
+                    android:lines="1"
+                    style="@style/Widget.AppCompat.Spinner.Underlined" />
+
+                <ImageView
+                    android:id="@+id/request_info"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_weight="13"
+                    android:src="@drawable/ic_info_icon"/>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/priorityStatus"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:typeface="sans"
+                android:textColor="@color/red"
+                android:visibility="gone"
+                android:paddingLeft="@dimen/fifteen_margin"
+                android:layout_marginBottom="@dimen/deca_margin" />
+
+
+            <EditText
+                android:id="@+id/et_short_description"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="@dimen/fifteen_margin"
+                android:background="@drawable/rounded_edittext_new"
+                android:gravity="top"
+                android:hint="@string/shortDescription"
+                android:lines="2"
+                android:textSize="@dimen/sixteen_text_size"
+                android:maxLength="150"
+                android:paddingLeft="@dimen/fifteen_margin"
+                android:paddingTop="@dimen/small_space_five"
+                android:textStyle="italic"
+                android:typeface="sans" />
+
+            <EditText
+                android:id="@+id/et_detailed_description"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="2.2"
+                android:background="@drawable/rounded_edittext_new"
+                android:gravity="top"
+                android:textSize="@dimen/sixteen_text_size"
+                android:hint="@string/detailedDescription"
+                android:inputType="text|textMultiLine"
+                android:lines="8"
+                android:maxLength="400"
+                android:paddingLeft="@dimen/fifteen_margin"
+                android:paddingTop="@dimen/small_space_five"
+                android:textStyle="italic"
+                android:typeface="sans" />
+
+            <EditText
+                android:id="@+id/location"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="@string/location"
+                android:imeOptions="actionNext"
+                android:inputType="text"
+                android:lines="1"
+                android:maxLines="1"
+                android:paddingLeft="@dimen/fifteen_margin"
+                android:text="@string/default_location"
+                android:typeface="sans" />
+
+            <EditText
+                android:id="@+id/contact_number"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="@string/contactNumber"
+                android:imeOptions="actionDone"
+                android:inputType="phone"
+                android:lines="1"
+                android:maxLength="15"
+                android:paddingLeft="@dimen/fifteen_margin"
+                android:typeface="sans" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="4">
+
+        <Button
+            android:id="@+id/buttonSubmitRequest"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/fifteen_margin"
+            android:layout_marginRight="@dimen/fifteen_margin"
+            android:background="@drawable/round_corner"
+            android:text="@string/action_submit"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            android:textSize="20sp" />
+
+    </LinearLayout>
+
+</LinearLayout>

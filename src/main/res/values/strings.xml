@@ -1,0 +1,335 @@
+<resources>
+    <string name="app_name">GBS IT Desk</string>
+    <string name="app_name_display">IT DESK</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="signIn">Sign In</string>
+    <string name="banner_text">"\"Wolters Kluwer combines deep domain knowledge with specialized technology;for professional decision making with confidence."\"</string>
+
+    <!--Drawer Navigation-->
+    <string name="user">User</string>
+    <string name="update_question">Update Security Questions</string>
+    <string name="logout">Logout</string>
+
+    <!--Home Page-->
+    <string name="incidents">Incidents</string>
+    <string name="requests">Requests</string>
+    <string name="messages">Global Messages</string>
+    <string name="incidents_uppercase">INCIDENTS</string>
+    <string name="requests_uppercase">REQUESTS</string>
+    <string name="change_password_uppercase">CHANGE/RESET PASSWORD</string>
+    <string name="messages_uppercase">GLOBALLY MESSAGES</string>
+    <string name="press_back_again">Press back again to exit.</string>
+
+    <!--Change/Reset Password-->
+    <string name="change_reset_password">Change/Reset Password</string>
+    <string name="changePassword">Change Password</string>
+    <string name="changePasswordFor">Change Password for</string>
+    <string name="resetPassword">Reset Password</string>
+    <string name="password">password</string>
+    <string name="europePassword">WoltersKluwer - EU</string>
+    <string name="NAPassword">WoltersKluwer - NA</string>
+    <string name="oldPassword">Old Password</string>
+    <string name="newPassword">New Password</string>
+    <string name="retypePassword">Retype Password</string>
+    <string name="ok">OK</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="changed_successfully">Password has been changed successfully</string>
+    <string name="error_try_again">Completed with failure. Please try after some time.</string>
+
+    <!--Reset Password-->
+    <string name="resetPasswordFor">Reset Password for</string>
+    <string name="login">Login</string>
+    <string name="FirstNameLastName">Firstname.Lastname</string>
+    <string name="Continue">Continue</string>
+    <string name="enterPassword">Enter New Password</string>
+    <string name="reenterPassword">Re Enter New Password</string>
+    <string name="verify">Verified</string>
+    <string name="verify_title">Verify</string>
+    <string name="identify_title">Identify</string>
+    <string name="reset">Reset</string>
+    <string name="reset_successfully">Password has been reset successfully</string>
+
+    <string name="password_note">The password must meet the following criteria:</string>
+    <string name="firstLastMiddleName">Must not contain First/last/Middle name</string>
+    <string name="eight_characters">Must be atleast 8 characters</string>
+    <string name="three_categories">Must be characters from any three of the following categories:</string>
+    <string name="password_uppercase">uppercase characters ( A through Z )</string>
+    <string name="password_lowercase">lowercase characters ( a through z )</string>
+    <string name="password_digits">digits ( 0 through 9 )</string>
+    <string name="password_signs">signs(non-alphanumeric characters )</string>
+
+    <!--Verify Question-->
+    <string name="questionOne">What is your favorite color?</string>
+    <string name="questionTwo">Which was your first car?</string>
+    <string name="questionThree">Who is your first teacher?</string>
+    <string name="add">Add</string>
+
+    <!--Buttons-->
+    <string name="action_submit">Submit</string>
+    <string name="action_continue">Continue</string>
+    <string name="decline">Decline</string>
+    <string name="accept">Accept</string>
+    <string name="passcode">Passcode</string>
+    <string name="touch_id">Touch ID</string>
+    <string name="answer">Answer&#8230;</string>
+    <string name="security">SECURITY</string>
+    <string name="security_mode">Choose a security Mode</string>
+    <string name="create_passcode">Create Passcode</string>
+    <string name="enter_passcode">Enter 6-digit Passcode</string>
+    <string name="verify_passcode">Verify Passcode</string>
+    <string name="enter_passcode_continue">Enter Passcode to Continue</string>
+    <string name="login_link"><u>Login using WK credentials</u></string>
+    <string name="confirm_login_again">Are you sure that you would like Sign in again?</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="sign_in">Sign in with your Wolters Kluwer Account</string>
+    <string name="terms_conditions">Terms and conditions</string>
+    <string name="terms_conditions_content1"><center>Please carefully read and ensure that you understand these terms and conditions of use before making an order.
+    Agreement represents the entire agreement between you and us concerning the subject matter described herein.The sole jurisdiction and venue for any action that may arise  in relation to the subject matter hereof shall be the courts of The Netherlands.These Terms and Conditions represent the entire agreement between you and WKH with respect to the subject matter hereof, and supersede any and all prior and contemporaneous written and oral representations, understandings, and agreements, express and implied, and will be governed by and construed in accordance with the laws of the Commonwealth of Pennsylvania, without reference to its conflict of law rules; PROVIDED, HOWEVER, THAT THE TERMS OF ANY APPLICABLE LAW NOW OR HEREAFTER ENACTED THAT IS BASED ON, DERIVED FROM, SIMILAR TO, OR CONNECTED WITH THE UNIFORM COMPUTER INFORMATION TRANSACTIONS ACT DRAFTED BY THE NATIONAL CONFERENCE OF COMMISSIONERS ON UNIFORM STATE LAWS SHALL NOT APPLY EXCEPT TO THE EXTENT THAT THE LAW EXPRESSLY PROHIBITS ALTERATION BY THESE TERMS AND CONDITIONS OF THE APPLICABILITY OF ONE OR MORE SECTIONS OF THE LAW. By accessing, viewing, or using the works, content, or materials on the Site, you consent and agree to (a) the exclusive jurisdiction and venue for any and all disputes arising out of this Agreement or related to the Service are in the state and federal courts located in Philadelphia, Pennsylvania and (b) accept service of process by personal delivery or mail; and (c) irrevocably waive the right to trial by jury and any jurisdictional and venue defenses otherwise available.
+    </center></string>
+    <string name="login_touch_id">Login with touch ID</string>
+    <string name="fingerprint_supported">Place your <b>finger</b> on the <b>Sensor</b> to verify your identity</string>
+    <string name="fingerprint_nohardware">Touch ID is not enrolled or This Device does not support Touch ID. Please visit Touch ID feature in settings.</string>
+    <string name="fingerprint_nopermission">Fingerprint authentication permission not enabled</string>
+    <string name="fingerprint_nofingerprint">Register at least one fingerprint in Settings</string>
+    <string name="fingerprint_nosecurity">Lock screen security not enabled in Settings</string>
+    <string name="fingerprint_fail">Fingerprint authentication failed</string>
+    <string name="fingerprint_belowmarshmellow">Touch ID is not enrolled or This Device does not support Touch ID. Please visit Touch ID feature in settings.</string>
+    <string name="security_toolbar_text">Security Question</string>
+    <string name="select_security_toolbar_text">Select Security Question</string>
+
+    <!--Error Messages-->
+    <string name="invalid_credentials">Please enter your Username</string>
+    <string name="passcode_mismatch">Your Passcodes do not match.</string>
+    <string name="wrong_passcode">Your Passcode is incorrect</string>
+    <string name="too_many_attempts">Too many attempts. Please login to continue</string>
+
+    <!--URLs-->
+    <!--<string name="base_URL">http://52.35.41.247:3017/api/</string>-->
+    <string name="base_URL">https://dev-iconnect.wkglobal.com/api/</string>
+    <string name="login_identify_URL">submit_request</string>
+    <string name="verify_answers_URL">check_answers</string>
+    <string name="reset_password_URL">reset_password</string>
+    <string name="change_password_URL">change_password</string>
+    <string name="status_check_URL">change_password_state/</string>
+    <string name="set_answers_URL">set_answers</string>
+    <string name="answered_questions_URL">answered_questions</string>
+    <string name="security_questions_list_url">security_questions</string>
+    <string name="roleURL">user_role/</string>
+    <string name="validateToken">validate_token</string>
+    <string name="get_ticket_by_id_URL">GetTicketbyId/</string>
+    <string name="global_message_url">globalmessage_get</string>
+
+    <!--1.5 URLS-->
+    <string name="base_URL_1.5">http://34.211.100.60:8080/iconnect/</string>
+    <string name="get_request_list">GetRequestList</string>
+    <string name="submit_request_URL">SubmitRequest</string>
+    <string name="get_incident_list_URl">GetIncidentList</string>
+    <string name="incident_summary_URL">incident_summary</string>
+    <string name="submit_incident_URL">SubmitIncident</string>
+
+
+    <!--Messages-->
+    <string name="security_question">Please select your security question</string>
+    <string name="error_message">Error</string>
+    <string name="login_failed_message">User not found</string>
+    <string name="server_error_message">Unable to connect Server. Please try after some time.</string>
+    <string name="internet_error_message">Please check your internet connection and try again.</string>
+    <string name="fields_cannot_be_null">The Fields cannot be empty</string>
+    <string name="passcode_length_six">The passcode should have six digits</string>
+    <string name="password_mismatch">The Passwords do not match</string>
+    <string name="wrong_message">Something went wrong</string>
+    <string name="answers_failed_message">Answers are incorrect</string>
+    <string name="connection_time_out">Sorry, you have Timed out, please try again later</string>
+    <string name="password_criteria_message">Password does not meet complexity criteria</string>
+    <string name="network_failure">We are experiencing intermittent issues related to Wolters Kluwer connectivity in the NY area. The team is working to resolve this and will be providing updates shortly.</string>
+    <string name="from_wkdesk_message">FROM WOLTERS KLUWER \n SERVICE DESK</string>
+
+    <!--Progress Bar Messages-->
+  <!--  <string name="progress_loading">Loading</string>
+    <string name="login_progress">Getting User Details&#8230;</string>
+    <string name="not_enrolled_user_progress">Getting Security Questions list&#8230;</string>
+    <string name="security_answer_empty">Please enter answers to all three questions</string>
+    <string name="improper_phone_number">Please enter a valid Phone Number</string>
+    <string name="password_empty">The Password fields cannot be empty</string>
+    <string name="changing_password_progress">Changing Password&#8230;</string>
+    <string name="reset_identify_progress">Loading Questions&#8230;</string>
+    <string name="reset_verify_progress">Verifying the Answers&#8230;</string>
+    <string name="reset_success_progress">Resetting the password</string>
+    <string name="update_security_question_progress">Updating Security Questions&#8230;</string>
+    <string name="loading_incidents_progress">Loading Incidents&#8230;</string>
+    <string name="loading_requests_progress">Loading Requests&#8230;</string>
+    <string name="loading_details_progress">Loading Details&#8230;</string>
+    <string name="submit_incidents_progress">Submitting Incidents&#8230;</string>
+    <string name="submit_requests_progress">Submitting Requests&#8230;</string> -->
+
+
+    <!--Progress Bar Messages v2.0-->
+    <string name="progress_loading">Loading</string>
+    <string name="login_progress">Getting User Details&#8230;</string>
+    <string name="not_enrolled_user_progress">Getting Security Questions list&#8230;</string>
+    <string name="security_answer_empty">Please enter answers to all three questions</string>
+    <string name="improper_phone_number">Please enter a valid Phone Number</string>
+    <string name="password_empty">The Password fields cannot be empty</string>
+    <string name="changing_password_progress">Changing Password&#8230;</string>
+    <string name="reset_identify_progress">Loading Questions&#8230;</string>
+    <string name="reset_verify_progress">Verifying the Answers&#8230;</string>
+    <string name="reset_success_progress">Resetting Password&#8230;</string>
+    <string name="update_security_question_progress">Updating Security Questions&#8230;</string>
+    <string name="loading_incidents_progress">Loading Incidents&#8230;</string>
+    <string name="loading_requests_progress">Loading Requests&#8230;</string>
+    <string name="refresh_requests_progress">Updating details…&#8230;</string>
+    <string name="refresh_incidents_progress">Updating details…&#8230;</string>
+    <string name="loading_details_progress">Loading Details&#8230;</string>
+    <string name="submit_incidents_progress">Submitting Incidents&#8230;</string>
+    <string name="submit_requests_progress">Submitting Requests&#8230;</string>
+    <string name="loading_global_message">Loading Global Messages&#8230;</string>
+
+    <string name="checkEnrolledAns">Checking Enrolled Answers&#8230;</string>
+    <string name="updatingQuestions">Updating Security Questions&#8230;</string>
+    <string name="submitAnswer">Submitting Answers&#8230;</string>
+    <string name="pull_to_refresh">Release to refresh&#8230;</string>
+
+
+    <!--Incident Page-->
+    <string name="noIncidents">No incidents. Pull to refresh</string>
+    <string name="noDetails">No details found</string>
+    <string name="onHold">Onhold</string>
+    <string name="inProgress">Work In Progress</string>
+    <string name="resolved">Resolved</string>
+    <string name="failed">Cancelled</string>
+    <string name="open">Open</string>
+    <string name="completed">Completed</string>
+    <string name="newStatus">New</string>
+    <string name="closed">Closed</string>
+    <string name="inidentnumber">#INC0303277</string>
+    <string name="incidentStatus">Unable to access portal</string>
+    <string name="successfully_created_incident"> has been submitted Successfully.</string>
+
+    <!--Incident Detail Page-->
+    <string name="created_time">Created Time</string>
+    <string name="resolved_time">Resolved Time</string>
+    <string name="updated_time">Updated Time</string>
+    <string name="assigned_to">Assigned To</string>
+    <string name="assignment_group">Assignment Group</string>
+    <string name="incidentDetails">Incident Details</string>
+    <string name="description">Detailed Description</string>
+    <string name="sampleContactingCustomer">john.smith@wolterskluwer.com</string>
+    <string name="sampleCallbackNumber">+48223359678</string>
+    <string name="sampleAffectedUser">jane@doe@wolterskluwer.com</string>
+    <string name="sampleDescription">Whenever I try to access portal I get a 401 Unauthorized Error</string>
+
+    <!--Create Incident Page-->
+    <string name="shortDescription">Short Description</string>
+    <string name="detailedDescription">Detailed Description</string>
+    <string name="location">Location</string>
+    <string name="contactNumber">Phone number</string>
+    <string name="requestDetails">Request Details</string>
+    <string name="noRequests">No requests. Pull to refresh</string>
+    <string name="defaultContactNumber">+16468535380</string>
+
+    <!--Global Messages-->
+    <string name="global_message_from">From Wolters Kluwer GBS IT Desk</string>
+    <string name="global_message_date">01&#8211;06&#8211;2017</string>
+    <string name="global_message">We are experiencing intermittent issues related to Wolters Kluwer connectivity in the NY area. The team is working to resolve this and will be providing updates shortly.</string>
+    <string name="create_request_toolbar">Create Request</string>
+    <string name="create_incident_toolbar">Create Incident</string>
+
+    <!--Create Request page-->
+    <string name="default_location">New York</string>
+    <string name="select_priority">Urgency</string>
+    <string name="priority_high">*Please call Wolters Kluwer Service Desk for ‘Critical’ and ‘High’ Urgency incidents.</string>
+    <string name="critical_priority">Urgency - Critical</string>
+    <string name="high_priority">Urgency - High</string>
+    <string name="medium_priority">Urgency - Medium</string>
+    <string name="low_priority">Urgency - Low</string>
+    <string name="select_priority_toast">Please select urgency</string>
+    <string name="successfully_created_request">The request has been submitted Sucessfully.</string>
+    <string name="critical_severity_incident"><b>Urgency - Critical</b>: An IT issue has caused significant business impact. Please note that only an authorized user can call in a Critical Severity incident.</string>
+    <string name="high_severity_incident"><b>Urgency - High</b>: An IT issue has caused limited but significant business impact.</string>
+    <string name="medium_severity_incident"><b>Urgency - Medium</b>: I am unproductive due to an IT issue.</string>
+    <string name="low_severity_incident"><b>Urgency - Low</b>: I have an IT issue but I can continue to function.</string>
+
+    <!--Shared Preferences-->
+    <string name="sharedprefs_name">WKPrefs</string>
+    <string name="termsAccept">termsAccept</string>
+
+    <!--Call Action-->
+    <string name="helpdesk_contact_normal">tel:+1 949 713 7614</string>
+    <string name="helpdesk_contact_vip">tel:+1 949 713 7614</string>
+    <string name="network_check">Please check your mobile network connection</string>
+    <string name="wolterskluwer">Wolters Kluwer</string>
+    <string name="assignment_history">Assignment History</string>
+    <string name="created_by">Created By:</string>
+    <string name="detailedDescriptiontext">Hi Kent, jgjbsafdbjsadbcjc vs dfajgbfjsan c afkbjns vmadfkjbasnd vcmw ad wefkbsjmv awg a fhawkejfb</string>
+    <string name="incidentName">Incident Name</string>
+    <string name="urgency"> Urgency</string>
+    <string name="critical">Critical</string>
+    <string name="high">High</string>
+    <string name="medium">Medium</string>
+    <string name="low">Low</string>
+    <string name="mylocaton">My Location</string>
+    <string name="myNumber">My Contact Number</string>
+    <string name="create_incidents">Create Incidents</string>
+    <string name="toplist_text">Top Incidents</string>
+    <string name="not_list_text">Not in this list?</string>
+    <string name="create_incidents_text"><b>Create a New Incident</b></string>
+    <string name="myrequests">My Request</string>
+    <string name="myincidents">My Incidents</string>
+    <string name="cant_access">Can\'t access your account?</string>
+    <string name="something_broken">If something is broken</string>
+    <string name="help_you">We can help you</string>
+    <string name="change_pass_subtext">Tap here to Change/Reset the password on your own</string>
+    <string name="global_subtext">You have got new messages</string>
+    <string name="global_message_content">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</string>
+    <string name="global_message_head">Duis aute irure dolor in reprehenderit</string>
+    <string name="btn_text_submit">SUBMIT</string>
+    <string name="touchid_headtext">Touch ID for “GBS IT Desk”</string>
+    <string name="touchid_subtext">Please use your fingerprint to unlock the application</string>
+    <string name="change_pwd_text">Change your existing password</string>
+    <string name="reset_pwd_text">Reset your expired password</string>
+    <string name="incident_details_URL">incident_details</string>
+    <string name="create_incident_URL">incident_create</string>
+    <string name="select_priority_check">Select any Priority</string>
+    <string name="request_summary_URL">request_summary</string>
+    <string name="noGlobalMessages">No Global Messages</string>
+    <string name="get_userphone_URL">userphone_get</string>
+    <string name="toplist_text_new">New</string>
+    <string name="create_request_URL">imp_create_request</string>
+    <string name="request_details_URL">request_details</string>
+    <string name="number_code">+1</string>
+    <string name="login_identify_wot_URL">submit_request_withouttoken</string>
+    <string name="verify_answers_wot_URL">check_answers_withouttoken</string>
+    <string name="reset_password_wot_URL">reset_password_withouttoken</string>
+
+    <!--New Error Messages v2.0-->
+
+    <string name="not_reachable">IT helpdesk is unavailable. Please try again later</string>
+    <string name="check_mobileNetwork">Please check your internet connection and try again</string>
+    <string name="something_went_wrong">Something went wrong</string>
+    <string name="unknown_state">Unknown State</string>
+    <string name="wrong_password">You have typed a Wrong Password</string>
+    <string name="user_name_empty">Please enter your Username</string>
+    <string name="authentication_error">An error has occurred while trying to authenticate</string>
+    <string name="authentication_error_max_attempt">You have reached maximum number of attempts</string>
+    <string name="user_blockced">Your access has been blocked at Rainier system.\n Please contact IT helpdesk or retry after 30 minutes</string>
+    <string name="security_questions_answer_error">The answer should be at least 4 characters long and no longer than 256 characters</string>
+    <string name="question_not_same">The Questions should not be same</string>
+    <string name="you_are_enrolled">"You are now enrolled successfully</string>
+    <string name="valid_pwd_text">"A valid Passcode should have six digits"</string>
+    <string name="paccsode_not_match">"The Passcodes do not match"</string>
+    <string name="finger_placed_wrong">"Please place your finger above the sensor correctly"</string>
+    <string name="password_complexity">"The Password doesn't meet complexity criteria"</string>
+    <string name="old_password_incorrect">"The old password is incorrect"</string>
+    <string name="oldpassword_new_same">"The old password and new password should not be the same"</string>
+    <string name="security_answers_notmatch">"The answers to security questions do not match"</string>
+    <string name="logout_message">"Are you sure you want to logout?"</string>
+    <string name="enter_valid_number">"Please enter a valid Phone Number"</string>
+    <string name="time_expired">"Sorry, you have Timed out, please try again later"</string>
+
+
+
+</resources>

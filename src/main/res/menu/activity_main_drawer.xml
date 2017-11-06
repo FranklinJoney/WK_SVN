@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group
+        android:id="@+id/user_nav"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_user"
+            android:checked="true"
+            android:icon="@drawable/ic_profile_blue"
+            android:title="@string/user">
+        </item>
+
+    </group>
+    <group android:id="@+id/update_nav">
+        <item
+            android:id="@+id/nav_update_question"
+            android:icon="@drawable/ic_update_security_questions_icon"
+            android:title="@string/update_question" />
+    </group>
+    <group android:id="@+id/password_nav">
+        <item
+            android:id="@+id/nav_change_passsword"
+            android:icon="@drawable/ic_change_reset_icon"
+            android:title="@string/change_reset_password" />
+    </group>
+    <group android:id="@+id/logout_nav">
+        <item
+            android:id="@+id/nav_logout"
+            android:icon="@drawable/ic_logout_menu_icon"
+            android:title="@string/logout"
+            android:visible="true" />
+    </group>
+    <group android:id="@+id/null_nav">
+
+    </group>
+
+</menu>

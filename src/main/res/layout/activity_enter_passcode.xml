@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@android:color/white">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:orientation="vertical"
+        android:weightSum="7">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:focusableInTouchMode="true"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imageViewLogo"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/new_image_size"
+                android:scaleType="fitXY"
+                app:srcCompat="@drawable/ic_banner_1" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal">
+
+                <TextView
+                    android:id="@+id/wrongpassword"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:textStyle="bold"
+                    android:textAlignment="inherit"
+                    android:visibility="gone"
+                    android:textColor="@android:color/holo_red_light"/>
+                <TextView
+                    android:id="@+id/textViewPasscode"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/fifty_space"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:text="@string/enter_passcode_continue"
+                    android:textColor="@color/enter_passcode_text"
+                    android:textSize="@dimen/twenty_two_text_size" />
+
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/editTextEnterPasscode"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/fifty_space"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_marginRight="@dimen/activity_horizontal_margin"
+                android:layout_marginTop="@dimen/thirty_five_space"
+                android:background="@drawable/rounded_edittext"
+                android:hint="@string/enter_passcode"
+                android:inputType="numberPassword"
+                android:maxLength="6"
+                android:textAlignment="center"
+                android:visibility="gone"
+                android:textSize="@dimen/twenty_two_size" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <com.bigbangbutton.editcodeview.EditCodeView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/et_passcode"
+                    android:layout_marginTop="25dp"
+                    app:underlineFilledColor="@color/black"
+                    android:layout_gravity="center"
+                    app:codeHiddenMode="true"
+                    app:textSize="20sp"
+                    app:codeLength="6"
+                    app:underlineStroke="3dp"/>
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="10dp"
+                    android:id="@+id/iv_showpass"
+                    android:clickable="true"
+                    app:srcCompat="@drawable/ic_passcode_visible_eye"/>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:layout_alignParentBottom="true"
+        android:weightSum="3">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_marginBottom="20dp">
+
+            <TextView
+                android:id="@+id/textViewLoginLink"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/seventy_space"
+                android:text="@string/login_link"
+                android:textAlignment="center"
+                android:textColor="@color/loginlink_blue"
+                android:textSize="@dimen/eighteen_text_size" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2"
+            android:padding="20dp"
+            >
+            <Button
+                android:id="@+id/buttonSubmit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/round_corner"
+                android:text="@string/btn_text_submit"
+                android:textAllCaps="false"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/twenty_text_size" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>

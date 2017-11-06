@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/table_row_linear"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/ll_assignment_details"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="3dp"
+        android:layout_marginTop="5dp"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Time"
+                android:textColor="@color/blue"
+                android:textSize="@dimen/twenty_two_text_size"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:text="Date"
+                android:textColor="@color/blue"
+                android:textSize="@dimen/twenty_two_text_size"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/assignment_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/messages"
+                android:textSize="@dimen/eighteen_text_size" />
+
+            <TextView
+                android:id="@+id/assignment_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:textColor="@color/messages"
+                android:textSize="@dimen/eighteen_text_size" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="5dp"
+            android:gravity="center_horizontal|center_vertical">
+
+            <TextView
+                android:id="@+id/tv_createdby"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/created_by"
+                android:textColor="@color/blue"
+                android:textSize="@dimen/twenty_two_text_size"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/created_by"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="10dp"
+                android:gravity="center_vertical"
+                android:layout_marginTop="3dp"
+                android:layout_toRightOf="@+id/tv_createdby"
+                android:text="@string/sampleAffectedUser"
+                android:textSize="@dimen/eighteen_text_size" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/details"
+        android:layout_width="310dp"
+        android:layout_height="200dp"
+        android:background="@drawable/rounded_edittext_new"
+        android:focusableInTouchMode="false"
+        android:gravity="top|center_vertical"
+        android:padding="5dp"
+        android:textColor="@color/black"
+        android:textSize="@dimen/eighteen_text_size" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:background="@color/colorTextGrey">
+    </View>
+</LinearLayout>

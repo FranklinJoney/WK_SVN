@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/dialog_bg"
+    >
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="10dp"
+        >
+
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/ic_fingerprint_red"/>
+
+
+    </LinearLayout>
+
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="8dp"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/medium_severity_incident"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:text="@string/touchid_headtext"
+            android:textStyle="bold"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+
+
+        <TextView
+            android:id="@+id/low_severity_incident"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/fifteen_margin"
+            android:paddingEnd="@dimen/zero_size"
+            android:paddingLeft="@dimen/twenty_five_space"
+            android:paddingRight="@dimen/zero_size"
+            android:paddingStart="@dimen/twenty_space"
+            android:text="@string/touchid_subtext" />
+
+
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/ok_alert"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="@string/http_auth_dialog_cancel"
+        android:textStyle="bold"
+        android:textAllCaps="false"
+        android:textColor="@color/blue"
+        android:textSize="@dimen/eighteen_text_size"
+        android:layout_marginTop="@dimen/deca_margin"
+        android:layout_marginBottom="@dimen/deca_margin"/>
+</LinearLayout>

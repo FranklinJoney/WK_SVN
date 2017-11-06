@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/content_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="4"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.ust.servicedesk.MainActivity"
+    tools:showIn="@layout/app_bar_main">
+
+    <LinearLayout
+        android:id="@+id/ll_incidents"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_marginBottom="@dimen/small_space_five"
+        android:layout_marginEnd="@dimen/small_space_five"
+        android:layout_marginLeft="@dimen/small_space_five"
+        android:layout_marginRight="@dimen/small_space_five"
+        android:layout_marginStart="@dimen/small_space_five"
+        android:layout_marginTop="@dimen/small_space_five"
+        android:background="@color/incident"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="55dp"
+            android:layout_gravity="center_vertical"
+            android:contentDescription="@string/app_name"
+            app:srcCompat="@drawable/ic_my_incidents_home_icon" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/incidents_uppercase"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:textSize="@dimen/eighteen_text_size" />
+
+            <TextView
+                android:id="@+id/incident_size"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="visible"
+                android:textSize="@dimen/sixteen_text_size"
+                android:text="@string/something_broken"
+                android:textColor="@color/white" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_requests"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_marginBottom="@dimen/small_space_five"
+        android:layout_marginEnd="@dimen/small_space_five"
+        android:layout_marginLeft="@dimen/small_space_five"
+        android:layout_marginRight="@dimen/small_space_five"
+        android:layout_marginStart="@dimen/small_space_five"
+        android:background="@color/requests">
+
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="55dp"
+            android:layout_gravity="center_vertical"
+            android:contentDescription="@string/app_name"
+            app:srcCompat="@drawable/ic_my_requests_home_icon" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/requests_uppercase"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:textSize="@dimen/eighteen_text_size" />
+
+            <TextView
+                android:id="@+id/request_size"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/help_you"
+                android:textSize="@dimen/sixteen_text_size"
+                android:visibility="visible"
+                android:textColor="@color/white" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_change_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_marginBottom="@dimen/small_space_five"
+        android:layout_marginEnd="@dimen/small_space_five"
+        android:layout_marginLeft="@dimen/small_space_five"
+        android:layout_marginRight="@dimen/small_space_five"
+        android:layout_marginStart="@dimen/small_space_five"
+        android:background="@color/change_password">
+
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="55dp"
+            android:layout_gravity="center_vertical"
+            android:contentDescription="@string/app_name"
+            app:srcCompat="@drawable/ic_change_reset_password_home_icon" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:layout_marginRight="5dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/change_password_uppercase"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:textSize="@dimen/eighteen_text_size" />
+
+            <TextView
+                android:id="@+id/changepwd_subtext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/sixteen_text_size"
+                android:text="@string/change_pass_subtext"
+                android:visibility="visible"
+                android:textColor="@color/white" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_global_messages"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_marginBottom="@dimen/small_space_five"
+        android:layout_marginEnd="@dimen/small_space_five"
+        android:layout_marginLeft="@dimen/small_space_five"
+        android:layout_marginRight="@dimen/small_space_five"
+        android:layout_marginStart="@dimen/small_space_five"
+        android:background="@color/messages">
+
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="55dp"
+            android:layout_gravity="center_vertical"
+            android:contentDescription="@string/app_name"
+            app:srcCompat="@drawable/ic_global_messages_home_icon" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/messages_uppercase"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:textSize="@dimen/eighteen_text_size" />
+
+            <TextView
+                android:id="@+id/global_size"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="visible"
+                android:textSize="@dimen/sixteen_text_size"
+                android:text="@string/global_subtext"
+                android:textColor="@color/white" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

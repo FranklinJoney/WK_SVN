@@ -1,0 +1,40 @@
+{
+  "data": [
+    {
+      "requestId":"1",
+      "shortDescriptions": "I need a distribution list to be created",
+      "requestTitle": "Request 01",
+      "requestStatus": "NEW"
+    },
+    {
+      "requestId":"2",
+      "shortDescriptions": "I need access to shared mailbox",
+      "requestTitle": "Request 02",
+      "requestStatus": "NEW"
+    },
+    {
+      "requestId":"3",
+      "shortDescriptions": "I need to be added / removed from distribution list",
+      "requestTitle": "Request 03",
+      "requestStatus": "NEW"
+    },
+    {
+      "requestId":"4",
+      "shortDescriptions": "Install and configure software on my device",
+      "requestTitle": "Request 04",
+      "requestStatus": "NEW"
+    },
+    {
+      "requestId":"5",
+      "shortDescriptions": "Install and configure VPN on my device",
+      "requestTitle": "Request 05",
+      "requestStatus": "NEW"
+    },
+    {
+      "requestId":"6",
+      "shortDescriptions": "I need to configure printer on my device",
+      "requestTitle": "Request 06",
+      "requestStatus": "NEW"
+    }
+  ]
+}

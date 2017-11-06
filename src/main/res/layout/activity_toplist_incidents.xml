@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/recyclerview"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            android:gravity="center"
+            app:popupTheme="@style/AppTheme.PopupOverlay">
+
+            <TextView
+                android:id="@+id/toolbar_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/create_incidents"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/twenty_text_size"
+                android:textStyle="bold" />
+
+        </android.support.v7.widget.Toolbar>
+
+    </android.support.design.widget.AppBarLayout>
+    <android.support.v7.widget.CardView
+        android:id="@+id/card_viewX"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:background="@color/white"
+        android:foregroundGravity="center"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/textView11"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:maxLines="1"
+            android:text="@string/noIncidents"
+            android:visibility="visible"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+    </android.support.v7.widget.CardView>
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/swipeContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="90dp"
+        android:scrollbars="none"
+        android:layout_marginTop="?attr/actionBarSize"
+        android:visibility="visible">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:id="@+id/toplist_txt"
+                android:layout_gravity="center"
+                android:padding="10dp"
+                android:textStyle="bold"
+                android:textSize="@dimen/twelve_text_size"
+                android:textAlignment="center"
+                android:background="#029982"
+                android:textColor="@android:color/white"
+                android:text="@string/toplist_text"/>
+            <android.support.v7.widget.RecyclerView
+            android:id="@+id/my_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="vertical">
+        </android.support.v7.widget.RecyclerView>
+        </LinearLayout>
+    </android.support.v4.widget.SwipeRefreshLayout>
+    <TextView
+        android:id="@+id/listText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/not_list_text"
+        android:textColor="@color/messages"
+        android:layout_marginBottom="70dp"
+        android:layout_gravity="bottom|center_horizontal"/>
+    <!--<Button
+        android:id="@+id/create_newIncidents"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/create_incidents_text"
+        android:background="@color/colorGreen"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="12dp"
+        android:textAllCaps="false"
+        android:textSize="@dimen/eighteen_text_size"
+        android:textStyle="bold"
+        android:layout_marginRight="12dp"
+        android:padding="6dp"
+        android:textColor="@android:color/white"
+        android:layout_gravity="bottom|center_horizontal"/>-->
+
+    <Button
+        android:id="@+id/create_newIncidents"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_marginLeft="@dimen/fifteen_margin"
+        android:layout_marginRight="@dimen/fifteen_margin"
+        android:background="@drawable/round_corner"
+        android:text="@string/create_incidents_text"
+        android:textAllCaps="false"
+        android:layout_marginBottom="8dp"
+        android:textColor="@android:color/white"
+        android:textStyle="bold"
+        android:textSize="@dimen/twenty_text_size" />
+
+</FrameLayout>

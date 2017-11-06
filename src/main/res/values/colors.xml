@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#00619C</color>
+    <color name="colorPrimaryDark">#313131</color>
+    <color name="colorAccent">#7cb342</color>
+
+    <!--Login page colors-->
+    <color name="health_care_number">#40B2A1</color>
+    <color name="health_care_vertical">#009881</color>
+    <color name="accounting_law_number">#409BD2</color>
+    <color name="accounting_law_vertical">#007AC3</color>
+       <!--Home Page-->
+    <color name="incident">#40B2A1</color>
+    <color name="requests">#419BD2</color>
+    <color name="change_password">#7cb342</color>
+    <color name="messages">#757575</color>
+    <color name="white">#FFFFFF</color>
+    <color name="blue">#006EBA</color>
+    <color name="transparent">#00fcfcfc</color>
+    <color name="disabled_button">#bfbfbf</color>
+
+    <color name="colorGreen">#85bc20</color>
+    <color name="colorTextGrey">#adadad</color>
+    <color name="darkGrey">#8f8f8f</color>
+    <color name="colorTransparent">#ffffff</color>
+    <color name="toolbarTransparent">#00FFFFFF</color>
+    <color name="black_alpha_40">#66000000</color>
+    <color name="rounded_edittext_border">#E7E7E7</color>
+    <color name="colorBlue">#76ADCD</color>
+    <color name="loginlink_blue">#0070BB</color>
+    <color name="enter_passcode_text">#504d59</color>
+    <color name="terms_conditions_text">#504E53</color>
+    <color name="security_mode">#5E5C61</color>
+    <color name="choose_security_mode">#666469</color>
+    <color name="login_text">#747472</color>
+    <color name="black">#000000</color>
+    <color name="divider">#EDEDED</color>
+    <color name="errorText">#E5202E</color>
+
+    <color name="red">#E5202E</color>
+
+    <!--Incident page colors-->
+    <color name="incidentnumber">#757575</color>
+    <color name="incidentTitle">#717171</color>
+    <color name="hint">#C3C3C3</color>
+    <color name="et_bg">#EFF6F9</color>
+    <color name="top_list_color">#2e9f56</color>
+    <color name="orange">#EA8F00</color>
+
+
+    <color name="request_open_color">#02629d</color>
+    <color name="request_progress_color">#950e73</color>
+    <color name="request_pending_color">#261a67</color>
+    <color name="request_rejected_color">#e5222f</color>
+    <color name="request_complete_color">#029982</color>
+    <color name="request_cancelled_color">#696969</color>
+
+
+
+
+</resources>
