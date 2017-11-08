@@ -150,7 +150,7 @@ public class SecurityQuestionListActivity extends BaseActivity {
                                 LayoutInflater inflater = LayoutInflater.from(SecurityQuestionListActivity.this);
                                 View dialogview = inflater.inflate(R.layout.alert_popup, null);
                                 TextView passwordMessage = (TextView) dialogview.findViewById(R.id.alert_message);
-                                passwordMessage.setText(Common.formatErrorMessage(errorObject.getJSONObject(0).getString("error_code"), errorObject.getJSONObject(0).getString("error_message")));
+                                passwordMessage.setText(Common.formatErrorMessage(SecurityQuestionListActivity.this,errorObject.getJSONObject(0).getString("error_code"), errorObject.getJSONObject(0).getString("error_message")));
                                 TextView ok = (TextView) dialogview.findViewById(R.id.ok_alert);
                                 ok.setOnClickListener(new View.OnClickListener() {
                                     @Override

@@ -66,6 +66,7 @@ public class PasswordResetActivity extends BaseActivity {
         Window window = PasswordResetActivity.this.getWindow();
         window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
         window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+        invalidateOptionsMenu();
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             window.setStatusBarColor(ContextCompat.getColor(PasswordResetActivity.this,R.color.colorPrimary));
         }
@@ -139,6 +140,14 @@ public class PasswordResetActivity extends BaseActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.main, menu);
+        MenuItem item = menu.findItem(R.id.home_page);
+        if(backToLogin){
+            Log.e(TAG,"Home"+backToLogin);
+            item.setVisible(false);
+        }else {
+            Log.e(TAG,"Home"+backToLogin);
+            item.setVisible(true);
+        }
         return true;
     }
 
@@ -150,12 +159,12 @@ public class PasswordResetActivity extends BaseActivity {
             finish();
             return true;
         }
-       /* if (id == R.id.home_page) {
+       if (id == R.id.home_page) {
             Intent intent = new Intent(PasswordResetActivity.this, MainActivity.class);
             startActivity(intent);
             finish();
             return true;
-        }*/
+        }
 
         return super.onOptionsItemSelected(item);
     }
@@ -248,7 +257,7 @@ public class PasswordResetActivity extends BaseActivity {
                                 LayoutInflater inflater = LayoutInflater.from(PasswordResetActivity.this);
                                 View dialogview = inflater.inflate(R.layout.alert_popup, null);
                                 TextView passwordMessage = (TextView) dialogview.findViewById(R.id.alert_message);
-                                passwordMessage.setText(Common.formatErrorMessage(errorObject.getJSONObject(0).getString("error_code"), errorObject.getJSONObject(0).getString("error_message")));
+                                passwordMessage.setText(Common.formatErrorMessage(PasswordResetActivity.this,errorObject.getJSONObject(0).getString("error_code"), errorObject.getJSONObject(0).getString("error_message")));
                                 TextView ok = (TextView) dialogview.findViewById(R.id.ok_alert);
                                 ok.setOnClickListener(new View.OnClickListener() {
                                     @Override
@@ -276,7 +285,7 @@ public class PasswordResetActivity extends BaseActivity {
                                 LayoutInflater inflater = LayoutInflater.from(PasswordResetActivity.this);
                                 View dialogview = inflater.inflate(R.layout.alert_popup, null);
                                 TextView passwordMessage = (TextView) dialogview.findViewById(R.id.alert_message);
-                                passwordMessage.setText(Common.formatErrorMessage(errorObjects1.getString("statusCode"), errorObjects1.getString("message")));
+                                passwordMessage.setText(Common.formatErrorMessage(PasswordResetActivity.this,errorObjects1.getString("statusCode"), errorObjects1.getString("message")));
                                 TextView ok = (TextView) dialogview.findViewById(R.id.ok_alert);
                                 ok.setOnClickListener(new View.OnClickListener() {
                                     @Override

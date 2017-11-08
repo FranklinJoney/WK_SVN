@@ -80,17 +80,17 @@ public class CreatePasscodeActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.home_main, menu);
+        getMenuInflater().inflate(R.menu.main_wo_home, menu);
         return true;
     }@Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
-        if (id == R.id.home_page) {
+        /*if (id == R.id.home_page) {
             Intent intent = new Intent(CreatePasscodeActivity.this, MainActivity.class);
             startActivity(intent);
             finish();
             return true;
-        }
+        }*/
         if (id == android.R.id.home) // Press Back Icon
         {
             finish();

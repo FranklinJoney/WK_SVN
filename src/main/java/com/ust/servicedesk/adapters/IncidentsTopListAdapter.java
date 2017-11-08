@@ -60,7 +60,7 @@ public class IncidentsTopListAdapter extends RecyclerView.Adapter<IncidentsTopLi
                        // args.putString("incidentNumber", incident.get(pos).get());
                         i.putExtra("BUNDLE", args);
                         i.putExtra("changeTexts",false);
-                        i.putExtra("incidentTitle",request_list.get(pos).getIncidentTitle());
+                        //i.putExtra("incidentTitle",request_list.get(pos).getIncidentTitle());
                         i.putExtra("incidentDes",request_list.get(pos).getDescreption());
                         i.putExtra("CreateType",TAG);
                         i.putExtra("from", RequestActivity.TAG);
@@ -81,7 +81,7 @@ public class IncidentsTopListAdapter extends RecyclerView.Adapter<IncidentsTopLi
                         i.putExtra("BUNDLE", args);
                         args.putBoolean("changeTexts",true);
                         i.putExtra("changeTexts",true);
-                        i.putExtra("incidentTitle",incident.get(pos).getIncidentTitle());
+                        //i.putExtra("incidentTitle",incident.get(pos).getIncidentTitle());
                         i.putExtra("incidentDes",incident.get(pos).getDescreption());
                         i.putExtra("CreateType",TAG);
                         i.putExtra("from",check);

@@ -6,8 +6,8 @@
     <string name="create_incidents">Create Incidents</string>
     <string name="toplist_text">Top Incidents</string>
     <string name="not_list_text">Not in this list?</string>
-    <string name="create_incidents_text">Create a New Incident</string>
-    <string name="myrequests">My Request</string>
+    <string name="create_incidents_text">Create a Different Incident</string>
+    <string name="myrequests">My Requests</string>
     <string name="myincidents">My Incidents</string>
     <string name="btn_text_submit">SUBMIT</string>
     <string name="touchid_subtext">Please use your fingerprint to unlock the application</string>

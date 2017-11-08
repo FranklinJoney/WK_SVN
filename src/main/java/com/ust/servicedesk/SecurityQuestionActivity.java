@@ -146,7 +146,7 @@ public class SecurityQuestionActivity extends AppCompatActivity {
         RequestQueue requestQueue = Volley.newRequestQueue(SecurityQuestionActivity.this);
         JSONObject jsonObject = new JSONObject();
         JSONArray jsonArray = new JSONArray();
-
+        Log.e(TAG,"SET_ANSWER_JSON"+ jsonObject.toString());
         try {
 
             JSONObject json1 = new JSONObject();
@@ -168,6 +168,7 @@ public class SecurityQuestionActivity extends AppCompatActivity {
             jsonObject.put(KEY_LOGIN, prefs.getString("loginUserName", null));
             jsonObject.put(KEY_ANSWERS, jsonArray);
             System.out.println(jsonArray.toString());
+            Log.e(TAG,"SET_ANSWER_JSON"+ jsonObject.toString());
 
         } catch (Exception e) {
             Log.i(TAG, getResources().getString(R.string.error_message), e);
@@ -209,7 +210,7 @@ public class SecurityQuestionActivity extends AppCompatActivity {
                                 LayoutInflater inflater = LayoutInflater.from(SecurityQuestionActivity.this);
                                 View dialogview = inflater.inflate(R.layout.alert_popup, null);
                                 TextView passwordMessage = (TextView) dialogview.findViewById(R.id.alert_message);
-                                passwordMessage.setText(Common.formatErrorMessage(errorObject.getJSONObject(0).getString("error_code"), errorObject.getJSONObject(0).getString("error_message")));
+                                passwordMessage.setText(Common.formatErrorMessage(SecurityQuestionActivity.this,errorObject.getJSONObject(0).getString("error_code"), errorObject.getJSONObject(0).getString("error_message")));
                                 TextView ok = (TextView) dialogview.findViewById(R.id.ok_alert);
                                 ok.setOnClickListener(new View.OnClickListener() {
                                     @Override
@@ -234,7 +235,7 @@ public class SecurityQuestionActivity extends AppCompatActivity {
                                 LayoutInflater inflater = LayoutInflater.from(SecurityQuestionActivity.this);
                                 View dialogview = inflater.inflate(R.layout.alert_popup, null);
                                 TextView passwordMessage = (TextView) dialogview.findViewById(R.id.alert_message);
-                                passwordMessage.setText(Common.formatErrorMessage(errorObjects1.getString("statusCode"), errorObjects1.getString("message")));
+                                passwordMessage.setText(Common.formatErrorMessage(SecurityQuestionActivity.this,errorObjects1.getString("statusCode"), errorObjects1.getString("message")));
                                 TextView ok = (TextView) dialogview.findViewById(R.id.ok_alert);
                                 ok.setOnClickListener(new View.OnClickListener() {
                                     @Override
@@ -286,6 +287,11 @@ public class SecurityQuestionActivity extends AppCompatActivity {
             @Override
             public Map<String, String> getHeaders() throws AuthFailureError {
                 Map<String, String> headers = new HashMap<String, String>();
+                String[] getUserIds = prefs.getString("emailID",null).split("@");
+                String getid = getUserIds[0];
+                headers.put("user_id", getid);
+                headers.put("access_token",prefs.getString("token",null));
+                headers.put("refresh_token",prefs.getString("refreshToken",null));
                 headers.put("Content-Type", "application/json");
                 return headers;
             }

@@ -39,6 +39,7 @@ import com.ust.servicedesk.utils.Common;
 import com.ust.servicedesk.utils.ObscuredSharedPreferences;
 
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.HashMap;
@@ -189,7 +190,7 @@ public class PasswordChangeActivity extends BaseActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.main_wo_home, menu);
+        getMenuInflater().inflate(R.menu.main, menu);
         return true;
     }
 
@@ -201,12 +202,12 @@ public class PasswordChangeActivity extends BaseActivity {
             finish();
             return true;
         }
-      /*  if (id == R.id.home_page) {
+        if (id == R.id.home_page) {
             Intent intent = new Intent(PasswordChangeActivity.this, MainActivity.class);
             startActivity(intent);
             finish();
             return true;
-        }*/
+        }
 
         return super.onOptionsItemSelected(item);
     }
@@ -223,7 +224,8 @@ public class PasswordChangeActivity extends BaseActivity {
         params.put(KEY_LOGIN, prefs.getString("loginUserName", null));
         params.put(KEY_OLD_PASSWORD, oldPassword.getText().toString());
         params.put(KEY_NEW_PASSWORD, newPassword.getText().toString());
-
+        JSONObject jsonObject = new JSONObject(params);
+        Log.e(TAG,"ChangePassWord"+ jsonObject.toString() );
         RequestQueue requestQueue = Volley.newRequestQueue(PasswordChangeActivity.this);
         JsonObjectRequest jsonObjReq = new JsonObjectRequest(Request.Method.POST, loginURL,
                 new JSONObject(params), new Response.Listener<JSONObject>() {
@@ -264,7 +266,7 @@ public class PasswordChangeActivity extends BaseActivity {
                                         LayoutInflater inflater = LayoutInflater.from(PasswordChangeActivity.this);
                                         View dialogview = inflater.inflate(R.layout.alert_popup, null);
                                         TextView passwordMessage = (TextView) dialogview.findViewById(R.id.alert_message);
-                                        passwordMessage.setText(Common.formatErrorMessage(errorObject.getJSONObject(0).getString("error_code"), errorObject.getJSONObject(0).getString("error_message")));
+                                        passwordMessage.setText(Common.formatErrorMessage(PasswordChangeActivity.this,errorObject.getJSONObject(0).getString("error_code"), errorObject.getJSONObject(0).getString("error_message")));
                                         TextView ok = (TextView) dialogview.findViewById(R.id.ok_alert);
                                         ok.setOnClickListener(new View.OnClickListener() {
                                             @Override
@@ -297,7 +299,7 @@ public class PasswordChangeActivity extends BaseActivity {
                                 LayoutInflater inflater = LayoutInflater.from(PasswordChangeActivity.this);
                                 View dialogview = inflater.inflate(R.layout.alert_popup, null);
                                 TextView passwordMessage = (TextView) dialogview.findViewById(R.id.alert_message);
-                                passwordMessage.setText(Common.formatErrorMessage(errorObject.getJSONObject(0).getString("error_code"), errorObject.getJSONObject(0).getString("error_message")));
+                                passwordMessage.setText(Common.formatErrorMessage(PasswordChangeActivity.this,errorObject.getJSONObject(0).getString("error_code"), errorObject.getJSONObject(0).getString("error_message")));
                                 TextView ok = (TextView) dialogview.findViewById(R.id.ok_alert);
                                 ok.setOnClickListener(new View.OnClickListener() {
                                     @Override
@@ -325,7 +327,7 @@ public class PasswordChangeActivity extends BaseActivity {
                                 LayoutInflater inflater = LayoutInflater.from(PasswordChangeActivity.this);
                                 View dialogview = inflater.inflate(R.layout.alert_popup, null);
                                 TextView passwordMessage = (TextView) dialogview.findViewById(R.id.alert_message);
-                                passwordMessage.setText(Common.formatErrorMessage(errorObjects1.getString("statusCode"), errorObjects1.getString("message")));
+                                passwordMessage.setText(Common.formatErrorMessage(PasswordChangeActivity.this,errorObjects1.getString("statusCode"), errorObjects1.getString("message")));
                                 TextView ok = (TextView) dialogview.findViewById(R.id.ok_alert);
                                 ok.setOnClickListener(new View.OnClickListener() {
                                     @Override
@@ -393,11 +395,21 @@ public class PasswordChangeActivity extends BaseActivity {
     }
 
     public void checkpasswordStatus(final View view) {
-        String loginURL = getResources().getString(R.string.base_URL) + getResources().getString(R.string.status_check_URL) + prefs.getString("request_id", null);
+        String loginURL = getResources().getString(R.string.base_URL) + getResources().getString(R.string.status_check_URL);
 
+        JSONObject jsonObject = new JSONObject();
+        try {
+            String[] getUserIds = prefs.getString("emailID",null).split("@");
+            String getid = getUserIds[0];
+            jsonObject.put("user_id", getid);
+            jsonObject.put("request_id",prefs.getString("request_id", null));
+            Log.e(TAG,"Status_Json_Body"+jsonObject.toString());
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
         RequestQueue requestQueue = Volley.newRequestQueue(PasswordChangeActivity.this);
-        JsonObjectRequest jsonObjReq = new JsonObjectRequest(Request.Method.GET, loginURL,
-                null, new Response.Listener<JSONObject>() {
+        JsonObjectRequest jsonObjReq = new JsonObjectRequest(Request.Method.POST, loginURL,
+                jsonObject, new Response.Listener<JSONObject>() {
 
             @Override
             public void onResponse(JSONObject response) {
@@ -451,7 +463,7 @@ public class PasswordChangeActivity extends BaseActivity {
                         LayoutInflater inflater = LayoutInflater.from(PasswordChangeActivity.this);
                         View dialogview = inflater.inflate(R.layout.alert_popup, null);
                         TextView passwordMessage = (TextView) dialogview.findViewById(R.id.alert_message);
-                        passwordMessage.setText(Common.formatErrorMessage(errorObjects1.getString("statusCode"), errorObjects1.getString("message")));
+                        passwordMessage.setText(Common.formatErrorMessage(PasswordChangeActivity.this,errorObjects1.getString("statusCode"), errorObjects1.getString("message")));
                         TextView ok = (TextView) dialogview.findViewById(R.id.ok_alert);
                         ok.setOnClickListener(new View.OnClickListener() {
                             @Override
@@ -474,7 +486,7 @@ public class PasswordChangeActivity extends BaseActivity {
                                 LayoutInflater inflater = LayoutInflater.from(PasswordChangeActivity.this);
                                 View dialogview = inflater.inflate(R.layout.alert_popup, null);
                                 TextView passwordMessage = (TextView) dialogview.findViewById(R.id.alert_message);
-                                passwordMessage.setText(Common.formatErrorMessage(errorObject.getJSONObject(0).getString("error_code"), errorObject.getJSONObject(0).getString("error_message")));
+                                passwordMessage.setText(Common.formatErrorMessage(PasswordChangeActivity.this,errorObject.getJSONObject(0).getString("error_code"), errorObject.getJSONObject(0).getString("error_message")));
                                 TextView ok = (TextView) dialogview.findViewById(R.id.ok_alert);
                                 ok.setOnClickListener(new View.OnClickListener() {
                                     @Override
@@ -545,10 +557,20 @@ public class PasswordChangeActivity extends BaseActivity {
                             Snackbar.make(view, getResources().getString(R.string.server_error_message), Snackbar.LENGTH_LONG)
                                     .setAction(null, null).show();
                         }
-
                     }
                 }) {
-
+            @Override
+            public Map<String, String> getHeaders() throws AuthFailureError {
+                Map<String, String> headers = new HashMap<String, String>();
+                String[] getUserIds = prefs.getString("emailID",null).split("@");
+                String getid = getUserIds[0];
+                headers.put("user_id", getid);
+                headers.put("access_token",prefs.getString("token",null));
+                headers.put("refresh_token",prefs.getString("refreshToken",null));
+                //headers.put("Content-Type", "application/json");
+                Log.i(TAG, "SharedHeaders:" + headers);
+                return headers;
+            }
         };
         jsonObjReq.setRetryPolicy(new DefaultRetryPolicy(DefaultRetryPolicy.DEFAULT_TIMEOUT_MS * 12, DefaultRetryPolicy.DEFAULT_MAX_RETRIES * 0, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
         requestQueue.add(jsonObjReq);

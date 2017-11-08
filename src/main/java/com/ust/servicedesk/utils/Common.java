@@ -7,6 +7,8 @@ import android.net.NetworkInfo;
 import android.util.Base64;
 import android.util.Log;
 
+import com.ust.servicedesk.R;
+
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -84,11 +86,64 @@ public class Common {
         return new String(Base64.decode(input.getBytes(), Base64.DEFAULT));
     }
 
-    public static String formatErrorMessage(String errorCode, String errorMessage) {
+    public static String formatErrorMessage(Context context,String errorCode, String errorMessage) {
         String errormsg = "Unknown error occurred";
         if (errorMessage != null || errorMessage != "") {
             if (errorCode != null || errorCode != "") {
-                errormsg = errorMessage.toString() + " (Error: " + errorCode + ")";
+                if(errorCode.equalsIgnoreCase("101")){
+                    errormsg = context.getResources().getString(R.string.connection_time_out);
+                }
+                else if(errorCode.equalsIgnoreCase("103")){
+                    errormsg = context.getResources().getString(R.string.security_answer_empty);
+                }
+                else if(errorCode.equalsIgnoreCase("201")){
+                    errormsg = context.getResources().getString(R.string.not_reachable);
+                }
+                else if(errorCode.equalsIgnoreCase("202")){
+                    errormsg = context.getResources().getString(R.string.enroll_login_option);
+                }
+                else if(errorCode.equalsIgnoreCase("203")){
+                    errormsg = context.getResources().getString(R.string.user_blockced);
+                }
+                else if(errorCode.equalsIgnoreCase("204")){
+                    errormsg = context.getResources().getString(R.string.not_reachable);
+                }
+                else if(errorCode.equalsIgnoreCase("301")) {
+                    errormsg = context.getResources().getString(R.string.security_answers_notmatch);
+                }
+                else if(errorCode.equalsIgnoreCase("302")){
+                    errormsg = context.getResources().getString(R.string.security_answer_empty);
+                }
+                else if(errorCode.equalsIgnoreCase("303")){
+                    errormsg = context.getResources().getString(R.string.authentication_error_max_attempt);
+                }
+                else if(errorCode.equalsIgnoreCase("305")){
+                    errormsg = context.getResources().getString(R.string.question_not_same);
+                }
+                else if(errorCode.equalsIgnoreCase("306")){
+                    errormsg = context.getResources().getString(R.string.security_answers_not_same);
+                }
+                else if(errorCode.equalsIgnoreCase("307")){
+                    errormsg = context.getResources().getString(R.string.security_questions_answer_error);
+                }
+                else if(errorCode.equalsIgnoreCase("308")){
+                    errormsg = context.getResources().getString(R.string.security_answer_empty);
+                }
+                else if(errorCode.equalsIgnoreCase("401")){
+                    errormsg = context.getResources().getString(R.string.password_complexity);
+                }
+                else if(errorCode.equalsIgnoreCase("402")){
+                    errormsg = context.getResources().getString(R.string.oldpassword_new_same);
+                }
+                else if(errorCode.equalsIgnoreCase("601")){
+                    errormsg = context.getResources().getString(R.string.security_answer_empty);
+                }
+                else if(errorCode.equalsIgnoreCase("602")){
+                    errormsg = context.getResources().getString(R.string.security_answer_empty);
+                }
+                else{
+                    errormsg = context.getResources().getString(R.string.security_answer_empty);
+                }
             } else {
                 errormsg = errorMessage;
             }

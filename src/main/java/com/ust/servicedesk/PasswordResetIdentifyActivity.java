@@ -109,6 +109,7 @@ public class PasswordResetIdentifyActivity extends BaseActivity {
             backToLogin = true;
             loginName.setEnabled(true);
         }
+        invalidateOptionsMenu();
         loginName.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
@@ -170,24 +171,34 @@ public class PasswordResetIdentifyActivity extends BaseActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.main_wo_home, menu);
+        getMenuInflater().inflate(R.menu.main, menu);
+        MenuItem item = menu.findItem(R.id.home_page);
+        if(backToLogin){
+            Log.e(TAG,"Home"+backToLogin);
+            item.setVisible(false);
+        }else {
+            Log.e(TAG,"Home"+backToLogin);
+            item.setVisible(true);
+        }
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
+
+
         if (id == android.R.id.home) // Press Back Icon
         {
             finish();
             return true;
         }
-       /* if (id == R.id.home_page) {
+       if (id == R.id.home_page) {
             Intent intent = new Intent(PasswordResetIdentifyActivity.this, MainActivity.class);
             startActivity(intent);
             finish();
             return true;
-        }*/
+        }
 
         return super.onOptionsItemSelected(item);
     }
@@ -258,7 +269,7 @@ public class PasswordResetIdentifyActivity extends BaseActivity {
                             LayoutInflater inflater = LayoutInflater.from(PasswordResetIdentifyActivity.this);
                             View dialogview = inflater.inflate(R.layout.alert_popup, null);
                             TextView passwordMessage = (TextView) dialogview.findViewById(R.id.alert_message);
-                            passwordMessage.setText(Common.formatErrorMessage(errorObjects.getJSONObject(0).getString("error_code"), errorObjects.getJSONObject(0).getString("error_message")));
+                            passwordMessage.setText(Common.formatErrorMessage(PasswordResetIdentifyActivity.this,errorObjects.getJSONObject(0).getString("error_code"), errorObjects.getJSONObject(0).getString("error_message")));
                             TextView ok = (TextView) dialogview.findViewById(R.id.ok_alert);
                             ok.setOnClickListener(new View.OnClickListener() {
                                 @Override

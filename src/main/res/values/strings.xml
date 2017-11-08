@@ -17,10 +17,10 @@
     <string name="incidents">Incidents</string>
     <string name="requests">Requests</string>
     <string name="messages">Global Messages</string>
-    <string name="incidents_uppercase">INCIDENTS</string>
-    <string name="requests_uppercase">REQUESTS</string>
+    <string name="incidents_uppercase">MY INCIDENTS</string>
+    <string name="requests_uppercase">MY REQUESTS</string>
     <string name="change_password_uppercase">CHANGE/RESET PASSWORD</string>
-    <string name="messages_uppercase">GLOBALLY MESSAGES</string>
+    <string name="messages_uppercase">GLOBAL MESSAGES</string>
     <string name="press_back_again">Press back again to exit.</string>
 
     <!--Change/Reset Password-->
@@ -103,8 +103,8 @@
 
     <!--Error Messages-->
     <string name="invalid_credentials">Please enter your Username</string>
-    <string name="passcode_mismatch">Your Passcodes do not match.</string>
-    <string name="wrong_passcode">Your Passcode is incorrect</string>
+    <string name="passcode_mismatch">The Passcodes do not match</string>
+    <string name="wrong_passcode">The Passcodes do not match</string>
     <string name="too_many_attempts">Too many attempts. Please login to continue</string>
 
     <!--URLs-->
@@ -139,10 +139,10 @@
     <string name="server_error_message">Unable to connect Server. Please try after some time.</string>
     <string name="internet_error_message">Please check your internet connection and try again.</string>
     <string name="fields_cannot_be_null">The Fields cannot be empty</string>
-    <string name="passcode_length_six">The passcode should have six digits</string>
+    <string name="passcode_length_six">A valid Passcode should have six digits</string>
     <string name="password_mismatch">The Passwords do not match</string>
     <string name="wrong_message">Something went wrong</string>
-    <string name="answers_failed_message">Answers are incorrect</string>
+    <string name="answers_failed_message">The answers to security questions do not match</string>
     <string name="connection_time_out">Sorry, you have Timed out, please try again later</string>
     <string name="password_criteria_message">Password does not meet complexity criteria</string>
     <string name="network_failure">We are experiencing intermittent issues related to Wolters Kluwer connectivity in the NY area. The team is working to resolve this and will be providing updates shortly.</string>
@@ -184,8 +184,8 @@
     <string name="refresh_requests_progress">Updating details…&#8230;</string>
     <string name="refresh_incidents_progress">Updating details…&#8230;</string>
     <string name="loading_details_progress">Loading Details&#8230;</string>
-    <string name="submit_incidents_progress">Submitting Incidents&#8230;</string>
-    <string name="submit_requests_progress">Submitting Requests&#8230;</string>
+    <string name="submit_incidents_progress">Submitting Incident&#8230;</string>
+    <string name="submit_requests_progress">Submitting Request&#8230;</string>
     <string name="loading_global_message">Loading Global Messages&#8230;</string>
 
     <string name="checkEnrolledAns">Checking Enrolled Answers&#8230;</string>
@@ -248,7 +248,8 @@
     <string name="low_priority">Urgency - Low</string>
     <string name="select_priority_toast">Please select urgency</string>
     <string name="successfully_created_request">The request has been submitted Sucessfully.</string>
-    <string name="critical_severity_incident"><b>Urgency - Critical</b>: An IT issue has caused significant business impact. Please note that only an authorized user can call in a Critical Severity incident.</string>
+    <string name="error_created_request">The request is not submitted</string>
+    <string name="critical_severity_incident"><b>Urgency - Critical</b>: An IT issue has caused significant business impact. Please note that only an authorized user can call in a Critical incident.</string>
     <string name="high_severity_incident"><b>Urgency - High</b>: An IT issue has caused limited but significant business impact.</string>
     <string name="medium_severity_incident"><b>Urgency - Medium</b>: I am unproductive due to an IT issue.</string>
     <string name="low_severity_incident"><b>Urgency - Low</b>: I have an IT issue but I can continue to function.</string>
@@ -276,8 +277,8 @@
     <string name="create_incidents">Create Incidents</string>
     <string name="toplist_text">Top Incidents</string>
     <string name="not_list_text">Not in this list?</string>
-    <string name="create_incidents_text"><b>Create a New Incident</b></string>
-    <string name="myrequests">My Request</string>
+    <string name="create_incidents_text"><b>Create a Different Incident</b></string>
+    <string name="myrequests">My Requests</string>
     <string name="myincidents">My Incidents</string>
     <string name="cant_access">Can\'t access your account?</string>
     <string name="something_broken">If something is broken</string>
@@ -311,6 +312,7 @@
     <string name="check_mobileNetwork">Please check your internet connection and try again</string>
     <string name="something_went_wrong">Something went wrong</string>
     <string name="unknown_state">Unknown State</string>
+    <string name="enroll_login_option">If you have not already enrolled, please ENROLL using the login option</string>
     <string name="wrong_password">You have typed a Wrong Password</string>
     <string name="user_name_empty">Please enter your Username</string>
     <string name="authentication_error">An error has occurred while trying to authenticate</string>
@@ -326,6 +328,7 @@
     <string name="old_password_incorrect">"The old password is incorrect"</string>
     <string name="oldpassword_new_same">"The old password and new password should not be the same"</string>
     <string name="security_answers_notmatch">"The answers to security questions do not match"</string>
+    <string name="security_answers_not_same">"The answers to security questions should not be the same"</string>
     <string name="logout_message">"Are you sure you want to logout?"</string>
     <string name="enter_valid_number">"Please enter a valid Phone Number"</string>
     <string name="time_expired">"Sorry, you have Timed out, please try again later"</string>

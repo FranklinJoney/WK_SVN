@@ -43,7 +43,7 @@ import java.util.List;
  * Created by jake on 16/10/17.
  */
 
-public class TopListIncidentsActivity extends AppCompatActivity implements View.OnClickListener {
+public class TopListIncidentsActivity extends BaseActivity implements View.OnClickListener {
 
     private List<TopListIncidents> top_incident = new ArrayList<>();
     private List<TopListRequests> top_request = new ArrayList<>();
@@ -161,7 +161,7 @@ public class TopListIncidentsActivity extends AppCompatActivity implements View.
             topTextList.setText("Top Requests");
 //            listText.setVisibility(View.GONE);
             createButton.setVisibility(View.VISIBLE);
-            createButton.setText("Create a New Request");
+            createButton.setText("Create a Different Request");
         }
         createButton.setOnClickListener(this);
         //getTopListIncidents();
@@ -187,7 +187,6 @@ public class TopListIncidentsActivity extends AppCompatActivity implements View.
                 top_request.add(new TopListRequests(
                         incidentObject.getString("requestId"),
                         incidentObject.getString("shortDescriptions"),
-                        incidentObject.getString("requestTitle"),
                         incidentObject.getString("requestStatus")));
             }
         } catch (JSONException e) {
@@ -215,7 +214,6 @@ public class TopListIncidentsActivity extends AppCompatActivity implements View.
                 top_incident.add(new TopListIncidents(
                         incidentObject.getString("incidentId"),
                         incidentObject.getString("shortDescriptions"),
-                        incidentObject.getString("incidentTitle"),
                         incidentObject.getString("incidentStatus")));
             }
         } catch (JSONException e) {

@@ -79,7 +79,7 @@
         android:layout_margin="@dimen/fab_margin"
         android:scaleType="fitXY"
         app:useCompatPadding="false"
-        app:fabSize="mini"
+        app:fabSize="normal"
         app:backgroundTint="#e5202e"
         app:srcCompat="@drawable/ic_add_icon_01"
         android:theme="@style/fabTheme"
@@ -97,7 +97,7 @@
         android:layout_marginStart="0dp"
         android:scaleType="fitXY"
         app:useCompatPadding="false"
-        app:fabSize="mini"
+        app:fabSize="normal"
         app:backgroundTint="#85bc20"
         app:srcCompat="@drawable/ic_call_icon_new"
         android:visibility="visible"/>

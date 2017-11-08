@@ -24,11 +24,10 @@ public class TopListIncidents implements Serializable {
         return incidentId;
     }
 
-    public TopListIncidents(String incidentId,String descreption, String incidentTitle,String incidentStatus){
+    public TopListIncidents(String incidentId,String descreption,String incidentStatus){
          this.descreption = descreption;
          this.incidentId = incidentId;
          this.incidentStatus = incidentStatus;
-         this.incidentTitle = incidentTitle;
      }
 
     public String getIncidentTitle() {

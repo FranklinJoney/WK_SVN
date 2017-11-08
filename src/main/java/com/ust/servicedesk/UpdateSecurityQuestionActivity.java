@@ -250,7 +250,7 @@ public class UpdateSecurityQuestionActivity extends BaseActivity {
                             LayoutInflater inflater = LayoutInflater.from(UpdateSecurityQuestionActivity.this);
                             View dialogview = inflater.inflate(R.layout.alert_popup, null);
                             TextView passwordMessage = (TextView) dialogview.findViewById(R.id.alert_message);
-                            passwordMessage.setText(Common.formatErrorMessage(errorObjects.getJSONObject(0).getString("error_code"), errorObjects.getJSONObject(0).getString("error_message")));
+                            passwordMessage.setText(Common.formatErrorMessage(UpdateSecurityQuestionActivity.this,errorObjects.getJSONObject(0).getString("error_code"), errorObjects.getJSONObject(0).getString("error_message")));
                             TextView ok = (TextView) dialogview.findViewById(R.id.ok_alert);
                             ok.setOnClickListener(new View.OnClickListener() {
                                 @Override
@@ -351,6 +351,7 @@ public class UpdateSecurityQuestionActivity extends BaseActivity {
             jsonObject.put(KEY_LOGIN, prefs.getString("loginUserName", null));
             jsonObject.put(KEY_ANSWERS, jsonArray);
 
+            Log.i(TAG, "UpdateSecurity" + jsonObject);
         } catch (Exception e) {
             Log.e(TAG, getResources().getString(R.string.error_message), e);
         }
@@ -362,14 +363,12 @@ public class UpdateSecurityQuestionActivity extends BaseActivity {
 
             @Override
             public void onResponse(JSONObject response) {
-
+                Log.i(TAG, "Response:" + response);
                 try {
                     JSONObject loginObject = response;
                     JSONObject dataObject = loginObject.getJSONObject("data");
                     JSONObject resultObject = dataObject.getJSONObject("result");
                     JSONArray errorObject;
-
-                    Log.i(TAG, "Response:" + response);
 
                     if ((errorObject = resultObject.getJSONArray("errors")).length() != 0) {
                         Common.dismissProgress();
@@ -378,7 +377,7 @@ public class UpdateSecurityQuestionActivity extends BaseActivity {
                             LayoutInflater inflater = LayoutInflater.from(UpdateSecurityQuestionActivity.this);
                             View dialogview = inflater.inflate(R.layout.alert_popup, null);
                             TextView passwordMessage = (TextView) dialogview.findViewById(R.id.alert_message);
-                            passwordMessage.setText(Common.formatErrorMessage(errorObject.getJSONObject(0).getString("error_code"), errorObject.getJSONObject(0).getString("error_message")));
+                            passwordMessage.setText(Common.formatErrorMessage(UpdateSecurityQuestionActivity.this,errorObject.getJSONObject(0).getString("error_code"), errorObject.getJSONObject(0).getString("error_message")));
                             TextView ok = (TextView) dialogview.findViewById(R.id.ok_alert);
                             ok.setOnClickListener(new View.OnClickListener() {
                                 @Override
@@ -402,7 +401,7 @@ public class UpdateSecurityQuestionActivity extends BaseActivity {
                         LayoutInflater inflater = LayoutInflater.from(UpdateSecurityQuestionActivity.this);
                         View dialogview = inflater.inflate(R.layout.alert_popup, null);
                         TextView passwordMessage = (TextView) dialogview.findViewById(R.id.alert_message);
-                        passwordMessage.setText(Common.formatErrorMessage(errorObjects1.getString("statusCode"), errorObjects1.getString("message")));
+                        passwordMessage.setText(Common.formatErrorMessage(UpdateSecurityQuestionActivity.this,errorObjects1.getString("statusCode"), errorObjects1.getString("message")));
                         TextView ok = (TextView) dialogview.findViewById(R.id.ok_alert);
                         ok.setOnClickListener(new View.OnClickListener() {
                             @Override
@@ -418,10 +417,31 @@ public class UpdateSecurityQuestionActivity extends BaseActivity {
                         dialogDetails.setCanceledOnTouchOutside(false);
                     } else if (resultObject.has("status")) {
                         Common.dismissProgress();
+                        Log.e(TAG,"TestTheStatus");
                         if (resultObject.getString("status").equalsIgnoreCase("updated")) {
-                            Intent intent = new Intent(UpdateSecurityQuestionActivity.this, MainActivity.class);
-                            startActivity(intent);
+                            Log.e(TAG,"TestTheStatusEqualsUpdated");
+                            LayoutInflater inflater = LayoutInflater.from(UpdateSecurityQuestionActivity.this);
+                            View dialogview = inflater.inflate(R.layout.alert_popup, null);
+                            TextView passwordMessage = (TextView) dialogview.findViewById(R.id.alert_message);
+                            passwordMessage.setText(getResources().getString(R.string.you_are_enrolled));
+                            TextView ok = (TextView) dialogview.findViewById(R.id.ok_alert);
+                            ok.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View view) {
+                                    Intent intent = new Intent(UpdateSecurityQuestionActivity.this, MainActivity.class);
+                                    startActivity(intent);
+                                    dialogDetails.dismiss();
+                                }
+                            });
+                            AlertDialog.Builder dialogbuilder = new AlertDialog.Builder(UpdateSecurityQuestionActivity.this);
+                            dialogbuilder.setView(dialogview);
+                            dialogDetails = dialogbuilder.create();
+                            dialogDetails.show();
+                            dialogDetails.setCancelable(false);
+                            dialogDetails.setCanceledOnTouchOutside(false);
                         }
+                    }else{
+                        Log.e(TAG,"NoStatus");
                     }
 
 
@@ -451,7 +471,18 @@ public class UpdateSecurityQuestionActivity extends BaseActivity {
                         }
                     }
                 }) {
-
+            @Override
+            public Map<String, String> getHeaders() throws AuthFailureError {
+                Map<String, String> headers = new HashMap<String, String>();
+                String[] getUserIds = prefs.getString("emailID",null).split("@");
+                String getid = getUserIds[0];
+                headers.put("user_id", getid);
+                headers.put("access_token",prefs.getString("token",null));
+                headers.put("refresh_token",prefs.getString("refreshToken",null));
+                //headers.put("Content-Type", "application/json");
+                Log.i(TAG, "SharedHeaders:" + headers);
+                return headers;
+            }
 
         };
         jsonObjReq.setRetryPolicy(new DefaultRetryPolicy(DefaultRetryPolicy.DEFAULT_TIMEOUT_MS * 2, DefaultRetryPolicy.DEFAULT_MAX_RETRIES, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
@@ -532,7 +563,7 @@ public class UpdateSecurityQuestionActivity extends BaseActivity {
                                 LayoutInflater inflater = LayoutInflater.from(UpdateSecurityQuestionActivity.this);
                                 View dialogview = inflater.inflate(R.layout.alert_popup, null);
                                 TextView passwordMessage = (TextView) dialogview.findViewById(R.id.alert_message);
-                                passwordMessage.setText(Common.formatErrorMessage(errorObject.getJSONObject(0).getString("error_code"), errorObject.getJSONObject(0).getString("error_message")));
+                                passwordMessage.setText(Common.formatErrorMessage(UpdateSecurityQuestionActivity.this,errorObject.getJSONObject(0).getString("error_code"), errorObject.getJSONObject(0).getString("error_message")));
                                 TextView ok = (TextView) dialogview.findViewById(R.id.ok_alert);
                                 ok.setOnClickListener(new View.OnClickListener() {
                                     @Override
@@ -594,11 +625,11 @@ public class UpdateSecurityQuestionActivity extends BaseActivity {
         requestQueue.add(jsonObjReq);
     }
 
-    @Override
+    /*@Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.itdesk_main, menu);
         return true;
-    }
+    }*/
 }
 
 

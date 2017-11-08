@@ -37,7 +37,7 @@
                 android:id="@+id/toplist_img"
                 android:layout_width="@dimen/eighty_height"
                 android:layout_height="@dimen/fifty_five_space"
-                android:src="@drawable/ic_open_blue"
+                app:srcCompat="@drawable/ic_open_blue"
                 />
 
         </LinearLayout>
@@ -64,6 +64,7 @@
                 android:maxLines="1"
                 android:ellipsize="end"
                 android:maxEms="20"
+                android:visibility="gone"
                 android:textStyle="bold"
                 android:textColor="@color/black"
                 android:textSize="@dimen/eighteen_text_size"
@@ -75,8 +76,10 @@
                 android:textStyle="normal"
                 android:text="Ram Damage"
                 android:maxLines="2"
+                android:gravity="center|fill_horizontal"
                 android:ellipsize="end"
                 android:maxEms="40"
+                android:textAlignment="inherit"
                 android:textColor="@color/messages"
                 android:textSize="@dimen/thirteen_text_size"
                 />
@@ -97,7 +100,7 @@
             android:layout_alignParentRight="true"
             android:layout_centerHorizontal="true"
             xmlns:app="http://schemas.android.com/apk/res-auto"
-            android:src="@drawable/ic_chevron_right_black_24dp"
+            app:srcCompat="@drawable/ic_chevron_right_black_24dp"
             />
 
     </LinearLayout>

@@ -16,6 +16,8 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
+import android.webkit.CookieManager;
+import android.webkit.CookieSyncManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -232,17 +234,17 @@ public class EnterPasscodeActivity extends AppCompatActivity {
     }
 
     public void logout() {
-
         try {
             SharedPreferences settings = getApplicationContext().getSharedPreferences(getResources().getString(R.string.sharedprefs_name), 0);
             SharedPreferences.Editor editor = settings.edit();
             editor.clear();
             editor.commit();
+            clearCookies(getApplicationContext());
+            trimCache(getApplicationContext());
             Intent intent = new Intent(EnterPasscodeActivity.this, MicrosoftLogin.class);
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(intent);
             finish();
-
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -250,18 +252,18 @@ public class EnterPasscodeActivity extends AppCompatActivity {
 
     public static void clearCookies(Context context) {
 
-//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP_MR1) {
-//            CookieManager.getInstance().removeAllCookies(null);
-//            CookieManager.getInstance().flush();
-//        } else {
-//            CookieSyncManager cookieSyncMngr = CookieSyncManager.createInstance(context);
-//            cookieSyncMngr.startSync();
-//            CookieManager cookieManager = CookieManager.getInstance();
-//            cookieManager.removeAllCookie();
-//            cookieManager.removeSessionCookie();
-//            cookieSyncMngr.stopSync();
-//            cookieSyncMngr.sync();
-//        }
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP_MR1) {
+           CookieManager.getInstance().removeAllCookies(null);
+           CookieManager.getInstance().flush();
+       } else {
+           CookieSyncManager cookieSyncMngr = CookieSyncManager.createInstance(context);
+            cookieSyncMngr.startSync();
+           CookieManager cookieManager = CookieManager.getInstance();
+           cookieManager.removeAllCookie();
+           cookieManager.removeSessionCookie();
+           cookieSyncMngr.stopSync();
+           cookieSyncMngr.sync();
+       }
     }
 
     public static void trimCache(Context context) {

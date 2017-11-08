@@ -64,16 +64,13 @@
                         android:id="@+id/status"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:text="@string/open"
+                        android:text="@string/newStatus"
                         android:textAlignment="inherit"
                         android:gravity="center_horizontal"
                         android:textColor="@color/blue"
                         android:textSize="@dimen/sixteen_text_size"
                         android:maxLines="1"
                         android:textStyle="bold" />
-
-
-
                 </LinearLayout>
 
 

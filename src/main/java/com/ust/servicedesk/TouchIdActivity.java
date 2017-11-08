@@ -263,18 +263,18 @@ public class TouchIdActivity extends AppCompatActivity {
 
     public static void clearCookies(Context context) {
 
-//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP_MR1) {
-//            CookieManager.getInstance().removeAllCookies(null);
-//            CookieManager.getInstance().flush();
-//        } else {
-//            CookieSyncManager cookieSyncMngr = CookieSyncManager.createInstance(context);
-//            cookieSyncMngr.startSync();
-//            CookieManager cookieManager = CookieManager.getInstance();
-//            cookieManager.removeAllCookie();
-//            cookieManager.removeSessionCookie();
-//            cookieSyncMngr.stopSync();
-//            cookieSyncMngr.sync();
-//        }
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP_MR1) {
+            CookieManager.getInstance().removeAllCookies(null);
+           CookieManager.getInstance().flush();
+      } else {
+            CookieSyncManager cookieSyncMngr = CookieSyncManager.createInstance(context);
+            cookieSyncMngr.startSync();
+            CookieManager cookieManager = CookieManager.getInstance();
+            cookieManager.removeAllCookie();
+            cookieManager.removeSessionCookie();
+            cookieSyncMngr.stopSync();
+            cookieSyncMngr.sync();
+        }
     }
 
     public static boolean deleteDir(File dir) {

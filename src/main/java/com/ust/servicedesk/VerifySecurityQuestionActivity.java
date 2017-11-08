@@ -69,7 +69,7 @@ public class VerifySecurityQuestionActivity extends BaseActivity {
         answerOne = (EditText) findViewById(R.id.answerOne);
         answerTwo = (EditText) findViewById(R.id.answerTwo);
         answerThree = (EditText) findViewById(R.id.answerThree);
-
+        invalidateOptionsMenu();
         Window window = VerifySecurityQuestionActivity.this.getWindow();
         window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
         window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
@@ -106,7 +106,15 @@ public class VerifySecurityQuestionActivity extends BaseActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.main_wo_home, menu);
+        getMenuInflater().inflate(R.menu.main, menu);
+        MenuItem item = menu.findItem(R.id.home_page);
+        if(backToLogin){
+            Log.e(TAG,"Home"+backToLogin);
+            item.setVisible(false);
+        }else {
+            Log.e(TAG,"Home"+backToLogin);
+            item.setVisible(true);
+        }
         return true;
     }
 
@@ -118,12 +126,12 @@ public class VerifySecurityQuestionActivity extends BaseActivity {
             finish();
             return true;
         }
-        /*if (id == R.id.home_page) {
+        if (id == R.id.home_page) {
             Intent intent = new Intent(VerifySecurityQuestionActivity.this, MainActivity.class);
             startActivity(intent);
             finish();
             return true;
-        }*/
+        }
 
         return super.onOptionsItemSelected(item);
     }
@@ -210,7 +218,7 @@ public class VerifySecurityQuestionActivity extends BaseActivity {
                                 LayoutInflater inflater = LayoutInflater.from(VerifySecurityQuestionActivity.this);
                                 View dialogview = inflater.inflate(R.layout.alert_popup, null);
                                 TextView passwordMessage = (TextView) dialogview.findViewById(R.id.alert_message);
-                                passwordMessage.setText(Common.formatErrorMessage(errorObject.getJSONObject(0).getString("error_code"), errorObject.getJSONObject(0).getString("error_message")));
+                                passwordMessage.setText(Common.formatErrorMessage(VerifySecurityQuestionActivity.this,errorObject.getJSONObject(0).getString("error_code"), errorObject.getJSONObject(0).getString("error_message")));
                                 TextView ok = (TextView) dialogview.findViewById(R.id.ok_alert);
                                 ok.setOnClickListener(new View.OnClickListener() {
                                     @Override
@@ -240,7 +248,7 @@ public class VerifySecurityQuestionActivity extends BaseActivity {
                                 LayoutInflater inflater = LayoutInflater.from(VerifySecurityQuestionActivity.this);
                                 View dialogview = inflater.inflate(R.layout.alert_popup, null);
                                 TextView passwordMessage = (TextView) dialogview.findViewById(R.id.alert_message);
-                                passwordMessage.setText(Common.formatErrorMessage(errorObjects1.getString("statusCode"), errorObjects1.getString("message")));
+                                passwordMessage.setText(Common.formatErrorMessage(VerifySecurityQuestionActivity.this,errorObjects1.getString("statusCode"), errorObjects1.getString("message")));
                                 TextView ok = (TextView) dialogview.findViewById(R.id.ok_alert);
                                 ok.setOnClickListener(new View.OnClickListener() {
                                     @Override

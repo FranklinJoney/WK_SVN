@@ -325,26 +325,35 @@ public class AddIncidentActivity extends BaseActivity {
             if (bundle.getBoolean("Button")) {
                 getTitle = "Incident Name";
                 toplistText.setText("New Incident");
-                getShortDes =  "";
+                getShortDes =  "Create a Different incident";
+                shortDes.setText(getShortDes);
+                //shortIncidentDescription.setText(" ");
             } else {
-                toplistText.setText("Top Incidents");
-                getTitle = bundle.getString("incidentTitle");
                 getShortDes = bundle.getString("incidentDes");
+                toplistText.setText("Top Incidents");
+                shortDes.setText(getShortDes);
+                //getTitle = bundle.getString("incidentTitle");
+                shortIncidentDescription.setText(getShortDes);
             }
         } else {
             requestCall = true;
             if (bundle.getBoolean("Button")) {
                 getTitle = "Request Name";
                 toplistText.setText("New Request");
-                getShortDes = "";
+                getShortDes = "Create a Different Request";
+                shortDes.setText(getShortDes);
+                //shortIncidentDescription.setText(" ");
+
             } else {
-                toplistText.setText("Top Requests");
-                getTitle = bundle.getString("incidentTitle");
                 getShortDes = bundle.getString("incidentDes");
+                toplistText.setText("Top Requests");
+                //getTitle = bundle.getString("incidentTitle");
+                shortIncidentDescription.setText(getShortDes);
+                shortDes.setText(getShortDes);
             }
         }
         getCreate = bundle.getString("CreateType");
-        title.setText("#"+getTitle);
+        //title.setText(getTitle);
         if (getCreate.equalsIgnoreCase(TopListIncidentsActivity.TAG)) {
             //title.setText("Incident Name");
             shortDes.setEnabled(false);
@@ -354,8 +363,8 @@ public class AddIncidentActivity extends BaseActivity {
             shortIncidentDescription.setEnabled(false);
         }
 
-        shortIncidentDescription.setText(getShortDes);
-        shortDes.setText(getShortDes);
+
+
         //createincidentCall();
         Log.e(TAG, "ToolBarText" + bundle.getBoolean("changeTexts"));
         if (bundle.getBoolean("changeTexts"))
@@ -1049,8 +1058,9 @@ public class AddIncidentActivity extends BaseActivity {
 
             params.put("u_short_description", shortIncidentDescription.getText().toString().replace("\n", "").replace("\r", "").trim());
             params.put("u_requested_for", WKPrefs.getString("emailID", null).trim());
-            params.put("u_description", detailedIncidentDescription.getText()+" Locations: " + locationView.getText()
-                                       + " Contact Number : "+ incidentContactNumber.getText().toString().replace("\n", "").replace("\r", "").trim());
+            params.put("u_description", detailedIncidentDescription.getText().toString().replace("\n", "").replace("\r", "")
+                    +" Locations: " + locationView.getText().toString().replace("\n", "").replace("\r", "")
+                    + " Contact Number : "+ incidentContactNumber.getText().toString().replace("\n", "").replace("\r", "").trim());
         }else {
             int priority = 0;
             if(priorityCritical.isChecked()){
@@ -1096,41 +1106,58 @@ public class AddIncidentActivity extends BaseActivity {
                         Log.i(TAG, "Response:" + response);
                         Log.e(TAG,"ConvertedBody"+ jsonObject);
                         Common.dismissProgress();
-                        if (loginObject.has("Data")) {
+                        /*if (loginObject.has("Data")) {
                             Snackbar.make(view, loginObject.getString("Data").toString(), Snackbar.LENGTH_LONG)
                                     .setAction(null, null).show();
-                        } else if (loginObject.getString("status").toString().equalsIgnoreCase(getString(R.string.ok))) {
+                        } else*/
+                        if (loginObject.getString("status").toString().equalsIgnoreCase(getString(R.string.ok))) {
                             JSONObject data = new JSONObject();
                             data = loginObject.getJSONObject("data");
-                            String statusId = data.getString("import_set");
-                            dialogDetails = null;
-                            LayoutInflater inflater = LayoutInflater.from(AddIncidentActivity.this);
-                            View dialogview = inflater.inflate(R.layout.alert_popup, null);
-
-                            TextView passwordMessage = (TextView) dialogview.findViewById(R.id.alert_message);
-                            if (requestCall){
-                                passwordMessage.setText(getResources().getString(R.string.successfully_created_request));
-                            }else
-                            passwordMessage.setText("The Incident # "+statusId + " " +getResources().getString(R.string.successfully_created_incident));
-                            TextView ok = (TextView) dialogview.findViewById(R.id.ok_alert);
-                            ok.setOnClickListener(new View.OnClickListener() {
-                                @Override
-                                public void onClick(View view) {
-                                    dialogDetails.dismiss();
-                                    Intent intent = new Intent(AddIncidentActivity.this, TopListIncidentsActivity.class);
-                                    intent.putExtra("changeTexts",changeTexts);
-                                    intent.putExtra("from",getParentActivity);
-                                    Log.e(TAG,"Activity"+getParentActivity);
-                                    startActivity(intent);
-                                    finish();
+                           // String statusId = data.getString("import_set");
+                            String incidentId = "";
+                            JSONArray result = new JSONArray();
+                            result = data.getJSONArray("result");
+                            String status = null;
+                            Log.e(TAG,"StatusNewCases"+result.toString());
+                            JSONObject JSONObject = new JSONObject();
+                            for (int i=0;i<result.length();i++){
+                                JSONObject object = result.getJSONObject(i);
+                                status = object.getString("status");
+                                incidentId = object.getString("display_value");
+                            }
+                            Log.e(TAG,"StatusNewCases"+status);
+                                dialogDetails = null;
+                                LayoutInflater inflater = LayoutInflater.from(AddIncidentActivity.this);
+                                View dialogview = inflater.inflate(R.layout.alert_popup, null);
+                                TextView passwordMessage = (TextView) dialogview.findViewById(R.id.alert_message);
+                            if(status != null && status.equalsIgnoreCase("inserted")) {
+                                if (requestCall) {
+                                    passwordMessage.setText(getResources().getString(R.string.successfully_created_request));
+                                } else {
+                                    passwordMessage.setText("The Incident # " + incidentId + " " + getResources().getString(R.string.successfully_created_incident));
                                 }
-                            });
-                            AlertDialog.Builder dialogbuilder = new AlertDialog.Builder(AddIncidentActivity.this);
-                            dialogbuilder.setView(dialogview);
-                            dialogDetails = dialogbuilder.create();
-                            dialogDetails.show();
-                            dialogDetails.setCancelable(false);
-                            dialogDetails.setCanceledOnTouchOutside(false);
+                            }else{
+                                passwordMessage.setText(getResources().getString(R.string.error_created_request));
+                            }
+                                TextView ok = (TextView) dialogview.findViewById(R.id.ok_alert);
+                                ok.setOnClickListener(new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View view) {
+                                        dialogDetails.dismiss();
+                                        Intent intent = new Intent(AddIncidentActivity.this, TopListIncidentsActivity.class);
+                                        intent.putExtra("changeTexts", changeTexts);
+                                        intent.putExtra("from", getParentActivity);
+                                        Log.e(TAG, "Activity" + getParentActivity);
+                                        startActivity(intent);
+                                        finish();
+                                    }
+                                });
+                                AlertDialog.Builder dialogbuilder = new AlertDialog.Builder(AddIncidentActivity.this);
+                                dialogbuilder.setView(dialogview);
+                                dialogDetails = dialogbuilder.create();
+                                dialogDetails.show();
+                                dialogDetails.setCancelable(false);
+                                dialogDetails.setCanceledOnTouchOutside(false);
 
                             shortIncidentDescription.setText("");
                             detailedIncidentDescription.setText("");

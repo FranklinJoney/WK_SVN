@@ -15,6 +15,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.DefaultRetryPolicy;
@@ -132,14 +133,16 @@ public class MicrosoftLogin extends AppCompatActivity implements View.OnClickLis
         } else {
             // Ask for token and provide callback
             try {
+                Log.e(TAG,"CheckingOnClick");
                 Common.progressBar(MicrosoftLogin.this, getString(R.string.login_progress));
                 mAuthContext = new AuthenticationContext(MicrosoftLogin.this, Constants.AUTHORITY_URL,
                         false, InMemoryCacheStore.getInstance());
                 mAuthContext.getCache().removeAll();
-
+                Log.e(TAG,"MicroSoft"+mAuthContext.toString());
                 if (Constants.CORRELATION_ID != null &&
                         Constants.CORRELATION_ID.trim().length() != 0) {
                     mAuthContext.setRequestCorrelationId(UUID.fromString(Constants.CORRELATION_ID));
+                    Log.e(TAG,"CheckingTesting");
                 }
 
                 mAuthContext.acquireToken(MicrosoftLogin.this, Constants.RESOURCE_ID,
@@ -151,7 +154,7 @@ public class MicrosoftLogin extends AppCompatActivity implements View.OnClickLis
                             public void onError(Exception exc) {
                                 Common.dismissProgress();
                                 Log.i("AADSampleActivity", " JMJ onError: " + exc.toString());
-//                                Toast.makeText(getApplicationContext(), TAG + "Failed to get token", Toast.LENGTH_SHORT).show();
+                               Toast.makeText(getApplicationContext(), TAG + "Failed to get token", Toast.LENGTH_SHORT).show();
 
                             }
 
@@ -183,6 +186,7 @@ public class MicrosoftLogin extends AppCompatActivity implements View.OnClickLis
                                 finish();
                                 startActivity(i);*/
                                 //checkRole(message);
+                                Log.e(TAG,"CheckingSucess");
                                 getansweredQuestions();
 
                             }
@@ -537,7 +541,7 @@ public class MicrosoftLogin extends AppCompatActivity implements View.OnClickLis
                             LayoutInflater inflater = LayoutInflater.from(MicrosoftLogin.this);
                             View dialogview = inflater.inflate(R.layout.alert_popup, null);
                             TextView passwordMessage = (TextView) dialogview.findViewById(R.id.alert_message);
-                            passwordMessage.setText(Common.formatErrorMessage(errorObject.getJSONObject(0).getString("error_code"), errorObject.getJSONObject(0).getString("error_message")));
+                            passwordMessage.setText(Common.formatErrorMessage(MicrosoftLogin.this,errorObject.getJSONObject(0).getString("error_code"), errorObject.getJSONObject(0).getString("error_message")));
                             TextView ok = (TextView) dialogview.findViewById(R.id.ok_alert);
                             ok.setOnClickListener(new View.OnClickListener() {
                                 @Override
@@ -561,7 +565,7 @@ public class MicrosoftLogin extends AppCompatActivity implements View.OnClickLis
                         LayoutInflater inflater = LayoutInflater.from(MicrosoftLogin.this);
                         View dialogview = inflater.inflate(R.layout.alert_popup, null);
                         TextView passwordMessage = (TextView) dialogview.findViewById(R.id.alert_message);
-                        passwordMessage.setText(Common.formatErrorMessage(errorObjects1.getString("statusCode"), errorObjects1.getString("message")));
+                        passwordMessage.setText(Common.formatErrorMessage(MicrosoftLogin.this,errorObjects1.getString("statusCode"), errorObjects1.getString("message")));
                         TextView ok = (TextView) dialogview.findViewById(R.id.ok_alert);
                         ok.setOnClickListener(new View.OnClickListener() {
                             @Override
@@ -597,7 +601,7 @@ public class MicrosoftLogin extends AppCompatActivity implements View.OnClickLis
                                 LayoutInflater inflater = LayoutInflater.from(MicrosoftLogin.this);
                                 View dialogview = inflater.inflate(R.layout.alert_popup, null);
                                 TextView passwordMessage = (TextView) dialogview.findViewById(R.id.alert_message);
-                                passwordMessage.setText(Common.formatErrorMessage(errorObject.getJSONObject(0).getString("error_code"), errorObject.getJSONObject(0).getString("error_message")));
+                                passwordMessage.setText(Common.formatErrorMessage(MicrosoftLogin.this,errorObject.getJSONObject(0).getString("error_code"), errorObject.getJSONObject(0).getString("error_message")));
                                 TextView ok = (TextView) dialogview.findViewById(R.id.ok_alert);
                                 ok.setOnClickListener(new View.OnClickListener() {
                                     @Override
@@ -622,7 +626,7 @@ public class MicrosoftLogin extends AppCompatActivity implements View.OnClickLis
                                 LayoutInflater inflater = LayoutInflater.from(MicrosoftLogin.this);
                                 View dialogview = inflater.inflate(R.layout.alert_popup, null);
                                 TextView passwordMessage = (TextView) dialogview.findViewById(R.id.alert_message);
-                                passwordMessage.setText(Common.formatErrorMessage(errorObjects1.getString("statusCode"), errorObjects1.getString("message")));
+                                passwordMessage.setText(Common.formatErrorMessage(MicrosoftLogin.this,errorObjects1.getString("statusCode"), errorObjects1.getString("message")));
                                 TextView ok = (TextView) dialogview.findViewById(R.id.ok_alert);
                                 ok.setOnClickListener(new View.OnClickListener() {
                                     @Override

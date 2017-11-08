@@ -23,11 +23,10 @@ public class TopListRequests implements Serializable {
 
     public TopListRequests(){}
 
-    public TopListRequests(String incidentId,String descreption,String incidentTitle, String incidentStatus){
+    public TopListRequests(String incidentId,String descreption, String incidentStatus){
         this.descreption = descreption;
         this.incidentId = incidentId;
         this.incidentStatus = incidentStatus;
-        this.incidentTitle = incidentTitle;
     }
     public String getIncidentTitle() {
         return incidentTitle;
